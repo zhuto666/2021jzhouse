@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>户型大全</title>
+		<script src="../js/jquery-1.12.4.js"></script>
+		<script src="../layui/layui.js"></script>
+		<link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/floatmuen.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pub_head.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pub_footer.css"/>
+		<link rel="stylesheet" href="../css/navigation.css">
+		<link rel="stylesheet" href="../css/properties/proNav.css">
+		<link rel="stylesheet" href="../css/properties/Family_of.css">
+	</head>
+	<body>
+		<ul id="floatMul"></ul>
+		<div id="head"></div>
+		<div id="navigation"></div>
+		<div id="proNav"></div>
+		<div id="Family_of">
+			<h1 id="Family_of_h1">优惠信息</h1>
+			<div id="Family_of_top">
+				<div id="Family_of_top_youhui">
+					<div class="div_layout">
+						<img src="../images/properties/Family_of/youhuibaoming.png">
+					</div>
+					<div class="div_layout" id="Discount_information">
+						<h6>楼盘优惠</h6>
+						<br />
+						<h3 style="font-weight: bold;">抢楼盘限时优惠！订阅实时楼盘折扣信息</h3>
+					</div>
+					<div>
+						<div id="Get_the_discount">
+							领取优惠
+						</div>
+					</div>
+				</div>
+				<div id="Family_of_top_kanfang">
+					<div class="div_layout">
+						<img src="../images/properties/Family_of/kanfangtuanbaoming.png">
+					</div>
+
+					<div class="div_layout" id="Group_bargaining">
+						<h3 style="font-weight: bold;">组员砍价</h3>
+						<br />
+						<h6>在线报名，成团后短信通知您</h6>
+					</div>
+					<div>
+						<div id="activity_registration">
+							报名参加
+						</div>
+						<div id="join">
+							<i>30</i>人已参加
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="Family_of_bottom">
+				<h1 id="Family_of_bottom_h1"><span>保利堂悦</span>户型图</h1>
+				<ul id="Family_of_bottom_ul">
+					<li th:each="h:${houselist}">
+						<div class="Family_of_bottom_img">
+							<img th:src="@{'../images/houseimg/'+${h.indoorImg.split(',')[0]}}">
+						</div>
+						<div class="Family_of_bottom_Details">
+							<span>
+								<p class="red" th:text="${h.title}"></p>
+								<p class="red"><span th:text="${h.room}">4</span>室<span th:text="${h.hall}">2</span>厅<span th:text="${h.defend}">2</span>卫</p>
+								<p class="red">约<span th:text="${h.houseSize}">145</span>m2(建面)</p>
+							</span>
+							<p>在售</p>
+							<p><span th:text="${h.beginTime}"></span></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<div id="property_consultant_tag">
+					<div id="property_consultant_h1">
+						<h1>置业顾问</h1>
+					</div>
+					<div id="property_consultant_a">
+						<a> 置业顾问入驻>> </a>
+					</div>
+				</div>
+			</div>
+
+			<div id="property_consultant">
+				<ul class="proInfo_zy_ul">
+					<li class="proInfo_zy_li">
+						<div class="proInfo_zy_left"><img src="../images/properties/pro1/rt.jfif" class="proInfo_zy_img" /></div>
+						<div class="proInfo_zy_left">
+							<p class="p1">A保利堂悦* 张柳清</p>
+							<p class="p2">置业顾问</p>
+							<p>
+								<span class="proInfo_zy_left_zx">咨询</span>
+								<span class="proInfo_zy_left_dh">电话</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+	<script th:inline="javascript">
+		$(function() {
+			$("#floatMul").load("../../publichtml/floatMune.html");
+			$("#head").load("../../publichtml/public_pageHead.html");
+			$("#footer").load("../../publichtml/pub_footer.html");
+			$("#navigation").load("../publichtml/navigation2.html");
+			$("#footer").load("../publichtml/pub_footer.html");
+			$("#proNav").load("../../publichtml/proNav.html",function(){
+				$(".proNav_ul>li").removeClass("proNav_ul_click").eq(2).addClass("proNav_ul_click");
+				var p = /*[[${session.p}]]*/ {};
+				console.log(p);
+				$(".proTitle").text(p.name);
+				$(".proStatus").text(p.status);
+				var spanC='';
+				$.each(p.chapros,function (i,d){
+					spanC+="<span class='proCha'>"+d.characteristic.name+"</span>";
+				})
+				$(".proNav_title_d1_d2").html(spanC);
+			});
+		});
+		$(".Family_of_bottom_Details").hover(function(){
+			$(this).children("span").toggleClass("reds");
+		})
+		$.ajax({
+			url:"../Adviser/find5",
+			type:"get",
+			success:function (data){
+				var li = "";
+				$.each(data,function (i,d){
+					li += "<li class='proInfo_zy_li'>"+
+							"<div class='proInfo_zy_left'><img src='../images/gwimg/"+d.consultanPortrait+"' class='proInfo_zy_img' /></div>"+
+							"   <div class='proInfo_zy_left'>"+
+							"       <p class='p1'>"+d.consultantName+"</p>"+
+							"       <p class='p2'>置业顾问</p>"+
+							"       <p>"+
+							"           <span class='proInfo_zy_left_zx'>咨询</span>"+
+							"           <span class='proInfo_zy_left_dh'>电话</span>"+
+							"       </p>"+
+							"       </div>"+
+							" </li>"
+				});
+				$(".proInfo_zy_ul").html(li);
+			}
+		});
+		
+	</script>
+</html>

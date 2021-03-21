@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>荆州土地市场数据查询系统</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/floatmuen.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_head.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_footer.css"/>
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/tudi.css">
+</head>
+<body>
+<ul id="floatMul"></ul>
+<div id="head"></div>
+<div id="navigation"></div>
+
+<div id="biaoti">
+    <div id="chaxun">
+        <h1 class="cu">荆州土地市场数据查询系统</h1><br />
+        <p class="sp">截止到2021年03月11日近一年内成交地块32个，成交额总计68.1842亿元，总面积3782.47亩</p><br /><br>
+
+        <div class="demoTable">
+            <div class="layui-inline">
+                <input class="layui-input xiala" name="plot" id="cin"  placeholder="地块编号">
+            </div>
+            <button class="layui-btn sousuo" data-type="reload">搜索</button>
+
+            <div class="layui-inline">
+                <input class="xiala layui-input" placeholder="地块位置 (如:某某路)" id="xm" name="location"/>
+            </div>
+            <button class="sousuo2 layui-btn" data-type="reload">搜索</button>
+
+            <div class="layui-inline">
+                <input class="xiala layui-input" placeholder="成交单位" id="kfs" name="location"/>
+            </div>
+            <button class="layui-btn sousuo3" data-type="reload">搜索</button>
+
+        </div>
+        <br><br>
+        <p class="wb">本系统收录荆州国有建设用地使用权招拍挂成交数据，包含范围居住/商业/商服</p><br>
+        <p class="wb">最新数据更新至<span id="sj"></span></p>
+        </div>
+    </div>
+
+</div>
+<div id="asc">
+    <h2 class="yus">荆州土地市场数据查询系统数据统计</h2>
+    <h4 class="yys">荆州好房子网</h4>
+</div>
+
+<div style="text-align: center;">
+    <div class="layui-inline">
+        <table id="demo" lay-filter="test" ></table>
+    </div>
+</div>
+
+<div id="youqing">
+    <h2 class="yq">友情提示</h2>
+    <h4 class="cyu">
+        本系统由荆州好房子网大数据平台收录，仅供查询，以相关部门公告为准<br><br>
+        引用本页数据请注明来自荆州好房子网,客服电话：400-600-0716</h4>
+</div>
+<div id="footer"></div>
+<script>
+    $(function(){
+        $("#floatMul").load("../publichtml/floatMune.html");
+        $("#head").load("../publichtml/public_pageHead.html");
+        $("#footer").load("../publichtml/pub_footer.html");
+        $("#navigation").load("../publichtml/navigation.html",function(){
+            $("#nologo>li").removeClass("active").eq(7).addClass("active");
+        });
+    });
+    $(function (){
+        var myDate =new Date;
+        var year = myDate.getFullYear(); //获取当前年
+        var mon = myDate.getMonth() + 1; //获取当前月
+        var date = myDate.getDate(); //获取当前日
+        console.log(year, mon, date)
+        $("#sj").html(year + "年" + mon + "月" + date + "日");
+    });
+</script>
+
+<script src="../layui/layui.js"></script>
+<script>
+    layui.use('table', function() {
+        var table = layui.table;
+        //第一个实例
+        table.render({
+            id : "testReload",
+            elem : '#demo',
+            height : 474                                                                                                    ,
+            width:1400,
+            limit : 10,
+            skin: 'line',
+            url : '/Market/blurredSelect', //数据接口
+            page : { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                layout : ['prev', 'page', 'next'], //自定义分页布局
+                groups : 4, //只显示 3 个连续页码
+                first : '首页', //首页
+                prev : '上一页',
+                next : '下一页',
+                last : '尾页', //尾页
+                curr : 1, //第几页，默认值是1
+            },
+            cols : [ [ //表头
+                {
+                    field : 'time',
+                    title : '成交时间',
+                    width : '10%',
+                    align:'center'
+                }
+                , {
+                    field : 'areas',
+                    title : '区域',
+                    width : '15%',
+                    align:'center'
+                }
+                , {
+                    field : 'plot',
+                    title : '地块编号',
+                    width : '15%',
+                    align:'center'
+                }
+                , {
+                    field : 'location',
+                    title : '地块位置',
+                    width : '25%',
+                    align:'center',
+                    style:'color:#009900'
+                }
+                , {
+                    title : '成交价',
+                    width : '10%',
+                    align:'center',
+                    templet:function (b){
+                        return  '<span style="color: #ff0052">'+b.price+'</span>'+'万元';
+                    }
+                }
+                , {
+                    field : 'unit',
+                    title : '成交单位',
+                    width : '15%',
+                    align:'center',
+                    style:'color:#009900'
+                }
+                , {
+                    title : '成交面积',
+                    width : '10.3%',
+                    align:'center',
+                    templet:function(b){
+                        return b.acreage+'亩';
+                    }
+                }
+            ] ]
+        });
+
+        var $ = layui.$, active = {
+            reload: function(){
+
+                //执行重载
+                table.reload('testReload', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    ,where: {
+                            unit: $("#cin").val(),
+                            location: $("#xm").val(),
+                            plot:$("#kfs").val()
+                    }
+                }, 'data');
+            }
+        };
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+
+</script>
+</body>
+</html>

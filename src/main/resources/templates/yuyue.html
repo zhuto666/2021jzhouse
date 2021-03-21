@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>荆州商品房预售证查询系统</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/floatmuen.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_head.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_footer.css"/>
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/yuyue.css">
+</head>
+<body>
+<ul id="floatMul"></ul>
+<div id="head"></div>
+<div id="navigation"></div>
+<div id="biaoti">
+    <div id="chaxun">
+        <h1 class="cu">荆州商品房预售证查询系统</h1><br />
+        <p class="sp">截止到2021年03月10日本年度批准商品房预售许可项目批次6个 ，总面积156575.87㎡</p><br /><br>
+
+        <div class="demoTable">
+            <div class="layui-inline">
+                <input class="layui-input xiala"  id="cin"  placeholder="许可证号" name="license">
+            </div>
+            <button class="layui-btn sousuo" data-type="reload">搜索</button>
+
+            <div class="layui-inline">
+                <input class="xiala layui-input" placeholder="项目名称" id="xm" name="project"/>
+            </div>
+            <button class="sousuo2 layui-btn" data-type="reload">搜索</button>
+
+            <div class="layui-inline">
+                <input class="xiala layui-input" placeholder="开发商" id="kfs" name="company"/>
+            </div>
+            <button class="layui-btn sousuo3" data-type="reload">搜索</button>
+
+        </div>
+        <br><br>
+        <p class="wb">本系统收录荆州商品房获批的预售许可证、开发经营许可、验收许可公告备案数据。仅供查询参考，以住建部门公告为准。</p><br>
+        <p class="wb"><span id="sj"></span></p>
+    </div>
+</div>
+<div id="asc">
+    <h2 class="yus">荆州商品预售许可查询系统</h2>
+    <h4 class="yys">荆州好房子网</h4>
+</div>
+
+<div style="text-align: center;">
+    <div class="layui-inline">
+        <table id="demo" lay-filter="test" ></table>
+    </div>
+</div>
+
+<div id="youqing">
+    <h2 class="yq">友情提示</h2>
+    <h4 class="cyu">
+        本系统由荆州好房子网大数据平台收录，仅供查询，以相关部门公告为准<br><br>
+        引用本页数据请注明来自荆州好房子网,客服电话：400-600-0716</h4>
+
+</div>
+
+<div id="footer"></div>
+<script type="text/javascript">
+    $(function(){
+        $("#floatMul").load("../publichtml/floatMune.html");
+        $("#head").load("../publichtml/public_pageHead.html");
+        $("#footer").load("../publichtml/pub_footer.html");
+        $("#navigation").load("../publichtml/navigation.html",function(){
+            $("#nologo>li").removeClass("active").eq(8).addClass("active");
+        });
+    });
+    $(function (){
+        var myDate =new Date;
+        var year = myDate.getFullYear(); //获取当前年
+        var mon = myDate.getMonth() + 1; //获取当前月
+        var date = myDate.getDate(); //获取当前日
+        console.log(year, mon, date)
+        $("#sj").html(year + "年" + mon + "月" + date + "日");
+    });
+</script>
+<script src="../layui/layui.js"></script>
+<script>
+    layui.use('table', function() {
+        var table = layui.table;
+        //第一个实例
+        table.render({
+            id : "testReload",
+            elem : '#demo',
+            height : 474                                                                                                    ,
+            width:1400,
+            limit : 10,
+            skin: 'line',
+            url : '/Presell/PresellSelect', //数据接口
+            page : { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                layout : ['prev', 'page', 'next'], //自定义分页布局
+                groups : 4, //只显示 3 个连续页码
+                first : '首页', //首页
+                prev : '上一页',
+                next : '下一页',
+                last : '尾页', //尾页
+                curr : 1, //第几页，默认值是1
+            },
+            cols : [ [ //表头
+                {
+                    field : 'time',
+                    title : '成交时间',
+                    width : '10%',
+                    align:'center'
+                }
+                , {
+                    field : 'areas',
+                    title : '区域',
+                    width : '15%',
+                    align:'center'
+                }
+                , {
+                    field : 'license',
+                    title : '许可证号',
+                    width : '20%',
+                    align:'center'
+                }
+                , {
+                    field : 'project',
+                    title : '项目名称',
+                    width : '25%',
+                    align:'center',
+                    style:'color:#009900'
+                }
+                , {
+                    field :'company',
+                    title : '公司名称',
+                    width : '15%',
+                    align:'center',
+                    style:'color:#009900'
+                }
+                , {
+                    field : 'totalArea',
+                    title : '总面积',
+                    width : '15%',
+                    align:'center',
+
+                }
+            ] ]
+        });
+        var $ = layui.$, active = {
+            reload: function(){
+                //执行重载
+                table.reload('testReload', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    ,where: {
+                        license: $("#cin").val(),
+                        project: $("#xm").val(),
+                        company: $("#kfs").val()
+                    }
+                }, 'data');
+            }
+        };
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+
+
+
+</script>
+</body>
+</html>

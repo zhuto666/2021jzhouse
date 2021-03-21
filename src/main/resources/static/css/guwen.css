@@ -1,0 +1,51 @@
+*{margin: 0px;padding: 0px;}
+#gid{
+    width: 100%;
+    margin: 0px auto;
+    background: url(../images/guw/zygwbg.png) center top no-repeat #FF5C6A;
+    height: 420px;
+    text-align: center;
+}
+.cu{
+    padding-top: 60px;
+    font-size: 60px;
+    color: #fff;
+
+}
+#gid .xiala{
+    width: 300px;
+    height: 35px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    font-size: 20px;
+    border: 0px;
+    padding-left: 25px;
+}
+#gid .sou{
+    width: 85px;
+    height: 35px;
+    vertical-align: bottom;
+    color: #fff;
+    margin-left: -4px;
+    border: 0px;
+    background: url(../images/guw/search.png) no-repeat;
+    background-size: cover;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 20px;
+}
+#gid .sq{
+    background: url(../images/guw/holdbutton1.png) no-repeat;
+    border: 0px;
+    width: 120px;
+    height: 35px;
+    margin-top: 30px;
+    text-align: center;
+    background-size: cover;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.layui-table th{
+    font-weight: bold;
+}

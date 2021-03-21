@@ -1,0 +1,98 @@
+*{margin:0px;padding:0px;}
+			#pub_head_bg{
+				background-color: rgba(245,245,246,1);
+				height: 36px;
+				width: 100%;
+				color: rgb(143,154,168);
+				line-height: 36px;
+				font-size: 10px;
+			}
+			#pub_head_bg a{
+				color: rgb(143,154,168);
+			}
+			#pub_head_bg a{
+				 display: inline-block;
+				 color: rgb(143,154,168);
+			     text-decoration: none;
+			  }
+			#pub_head_bg a:hover{
+				  color: rgb(143,154,168);
+			  }
+			#pub_head_bg .pub_float_left{
+				  display: inline-block;
+			  }
+			#pub_head_bg .pub_float_right{
+				display: inline-block;
+				text-align: right;
+			  }
+			#pub_head_bg .pubc_head_span_block{
+				display: inline-block; 
+				height: 100%;
+				position: relative;
+				padding: 0px 12px;
+			  }
+			  
+			#pub_head_bg .pubc_head_i_icon{	
+				 width: 18px;
+				 height: 18px;
+				 display: inline-block;
+				 line-height: 36px;
+				 vertical-align:-4px;
+			 }
+			 
+			#pub_head_bg .pub_head_p{			/* 导航栏下拉登录/注册菜单*/
+				 display:none;
+				 position:absolute;
+				 width: 100%;
+				 left: 0px;
+				 top: 36px;
+				 text-align: center;
+				 box-shadow:1px 1px 3px rgb(229,229,229);
+				 z-index: 9;
+				background-color: #fff;
+			 }
+			#pub_head_bg .pub_head_p li a{		
+				 height: 100%;
+				 width: 100%;
+			 }
+			#pub_head_bg .pubc_head_span_block:hover .pub_head_p{
+				 display: block;
+			 }
+			#pub_head_bg .pub_head_phone{	/*手机扫码登录*/
+				  display:none;
+				  box-shadow:1px 1px 3px rgb(229,229,229);
+				  position: absolute;
+				  left: 0px;
+				  width: 150px;
+				  text-align: center;
+				  color: #000000;
+				  font-family: "microsoft yahei";
+				  font-size: 16px;
+				  z-index: 9;
+				background-color: #fff;
+			  }
+			#pub_head_bg .pub_head_phone img{
+				  width:150px;
+				  height: 150px;
+			  }
+			#pub_head_bg .pubc_head_span_block:hover .pub_head_phone{
+				  display: block;
+			  }
+			#pub_head_bg .pubc_head_span_block:hover #nav_list{
+			  				  display: block;
+			  }
+			#pub_head_bg #nav_list{
+				  color: rgb(143,154,168);
+				  box-shadow:1px 1px 3px rgb(229,229,229);
+				  font-size: 12px;
+				  width: 100%;
+				  position: absolute;
+				  left: 0px;
+				  z-index: 9;
+				  background-color: rgba(255,255,255,1);
+				  display: none;
+				  text-align: center;
+			  }
+			#pub_head_bg #nav_list p :hover{
+				  color: rgb(255,92,0);
+			  }

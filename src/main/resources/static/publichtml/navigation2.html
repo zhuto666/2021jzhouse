@@ -1,0 +1,62 @@
+<!-- 首页带logo导航的代码（下面） -->
+<div id="index-login-daohang">
+	<div id="index-login-daohang-bao">
+		<div id="logo">
+			<img src="../images/navimg/1.jpeg" onclick="location.href='/jump/index'"  />
+		</div>
+
+		<div id="index-login-daohang-zhong">
+			<div id="index-login-daohang-zhong-shang">
+				<a class="daohangCheck" value="newhouse">新房</a>
+				<a value="old">二手房</a>
+				<a value="zhouse">租房</a>
+			</div>
+			<div id="index-login-daohang-zhong-xia">
+				<form>
+					<div class="layui-input-block">
+						<input style="width: 450px;height: 40px; display: inline-block;" type="text" name="title" lay-verify="title"
+						 autocomplete="off" placeholder="请输入小区名称" class="layui-input indexSouText">
+						<div style="float: right;"><img onclick="indexSou()" style="width: 80px;" src="../images/navimg/2.png" /></div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="index-login-daohang-you">
+			<a class="tfy-map" href="javascript:;">地图找房</a>
+			<a rel="nofollow" class="tfy-new" href="javascript:;">发布信息</a>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			if ($(document).scrollTop() <= 26) {
+				$("#index-login-daohang").css("position", "relative");
+			}
+
+			if ($(document).scrollTop() > 147) {
+				$("#index-login-daohang").css("position", "fixed");
+				$("#index-login-daohang").css("top", "0px");
+			}
+
+		});
+
+	});
+
+	$("#index-login-daohang-zhong-shang>a").click(function() {
+		$(this).siblings().removeClass("daohangCheck");
+		$(this).addClass("daohangCheck");
+	});
+	function indexSou(){
+		var path = $(".daohangCheck").attr("value");
+		if(path!="newhouse"){
+			location.href = "/selhouse/newhouse2?type="+(path=="old"?2:3)+"&name2="+$("[name=title]").val();
+		}else{
+			location.href = "/selhouse/"+path+"?name2="+$("[name=title]").val();
+		}
+
+	};
+</script>

@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jzhousedb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  devtools:
+    restart:
+      enable: true
+      additional-paths: src/main/java
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: true
+logging:
+  level:
+    com:
+      good:
+        jzhouse:
+          dao: debug

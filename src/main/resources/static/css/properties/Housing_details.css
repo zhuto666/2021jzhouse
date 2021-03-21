@@ -1,0 +1,164 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#flats {
+	height: 2000px;
+	width: 1200px;
+	margin: 10px auto;
+}
+#flats_left{
+	float: left;
+	width: 830px;
+	height: 2000px;
+}
+#flats_right{
+	float: right;
+	width: 295px;
+	height: 2000px;
+}
+#Surrounding_buildings_h2{
+	margin-bottom: -20px;
+	margin-top: 20px;
+}
+#Hot_property_h2{
+	margin-bottom: -20px;
+	margin-top: 20px;
+}
+
+#Map_supporting_information{
+	margin-top: 30px;
+	width: 295px;
+	height: 212.8px;
+	border: 1px solid rgba(200,200,200,1);
+}
+#phone_number{
+	margin-top: 30px;
+	width: 295px;
+	height: 124px;
+	border: 1px solid rgba(200,200,200,1);
+}
+#Surrounding_buildings{
+	margin-top: 30px;
+	width: 295px;
+	border: 1px solid rgba(200,200,200,1);
+}
+#Hot_property{
+	margin-top: 30px;
+	width: 295px;
+	height: 242px;
+	border: 1px solid rgba(200,200,200,1);
+}
+
+#basic_information {
+	margin-top: 50px;
+	width: 830px;
+	height: 300px;
+	border: 1px solid rgba(200,200,200,1);
+	padding: 20px;
+	margin-bottom: 50px;
+}
+
+#Community_is {
+	margin-top: 50px;
+	float: left;
+	width: 830px;
+	height: 336.28px;
+	border: 1px solid rgba(200,200,200,1);
+	padding: 20px;
+	margin-bottom: 50px;
+}
+#district_planning {
+	margin-top: 50px;
+	float: left;
+	width: 830px;
+	height: 490px;
+	border: 1px solid rgba(200,200,200,1);
+	padding: 20px;
+	margin-bottom: 50px;
+}
+#project_introduction {
+	margin-top: 50px;
+	float: left;
+	width: 830px;
+	border: 1px solid rgba(200,200,200,1);
+	padding: 20px;
+	line-height: 20px;
+	margin-bottom: 50px;
+}
+
+.basic_information_table{
+	height: 50px;
+	line-height: 50px;
+}
+
+table tr td:first-child {
+	width: 100px;
+}
+
+#basic_information_h2{
+	clear: both;
+	margin-bottom: -40px;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+#Community_is_h2{
+	clear: both;
+	margin-bottom: -40px;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+#district_planning_h2{
+	clear: both;
+	margin-bottom: -40px;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+#project_introduction_h2{
+	clear: both;
+	margin-bottom: -40px;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+#phone_number_service{
+	color: #68AE09;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+#phone_number_detail{
+	margin-top: 15px;
+	margin-left: 16px;
+	margin-right: 15px;
+}
+#Surrounding_buildings_table{
+	height: 40px;
+	line-height: 40px;
+	margin-left: 30px;
+	margin-right: 20px;
+}
+#Surrounding_buildings_table tr
+#Hot_property_table{
+	height: 40px;
+	line-height: 40px;
+	margin-left: 30px;
+	margin-right: 20px;
+}
+#Surrounding_buildings_table tr td:nth-child(1){
+	cursor: pointer;
+}
+#Surrounding_buildings_table span{
+	color: red;
+}
+#Hot_property_table tr td:nth-child(1){
+	cursor: pointer;
+}
+#Hot_property_table span{
+	color: red;
+}
+.basic_information_table a{
+	cursor: pointer;
+}
+
+
+
+

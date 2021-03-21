@@ -1,0 +1,27 @@
+#proNav{width: 1200px;margin: 0px auto;}
+			.currentPage{
+			    color: #999999;
+			    font-size: 10px !important;
+			    height: 30px;
+			    line-height: 30px;
+			    margin: 10px 0px;
+			}
+			.proNav_title{margin-top: 10px;}
+			.proNav_title_d1{float: left;}
+			.proNav_title_d1>div{float: left;}
+			.proNav_title_d1>div:first-child{width: 80px;height: 80px;margin-right: 20px;}
+			.proNav_title_d1>div:last-child div{margin-top: 5px;}
+			.proNav_title_d1 .img{width: 80px;height: 80px;}
+			.proTitle{font-size: 28px;color: #5C5C5C;}
+			.proStatus{margin-left: 10px;display: inline-block;background-color: #FF6600;color: #FFFFFF;padding: 3px 5px;border-radius: 5px;}
+			.proCha{margin-right: 10px;display: inline-block;background-color: #FEE9E6;color: #FC9483;padding: 3px 5px;border-radius: 5px;}
+			.proNav_title_d2{float: right;color: #999999;font-size: 14px;text-align: right;}
+			.proNav_title_d2>div:first-child{margin-top: 10px;}
+			.proNav_title_d2>div:last-child{margin-top: 20px;}
+			.proNav_title_d2_rel{position: relative;float: left;cursor: pointer;}
+			.proNav_title_d2_rel:first-child{position: relative;float: left;margin-right: 10px;}
+			.proNav_title_d2_abs{display: none;position: absolute;padding: 5px 10px;background-color: #fff;border: 1px solid #D9D9D9;font-size: 12px;text-align: center;}
+		
+			.proNav_ul{margin-top: 10px;list-style: none;background-color: #f5f5f5;overflow: hidden;cursor: pointer;}
+			.proNav_ul li{float: left;width: 120px;height: 50px;line-height: 50px;text-align: center;font-size: 14px;font-weight: bold;}
+			.proNav_ul_click{background-color: red;color: #fff;font-size: 16px;}

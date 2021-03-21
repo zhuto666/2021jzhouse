@@ -1,0 +1,153 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+ol, ul {
+    list-style: none;
+}
+
+/* 带logo的导航栏 */
+#index-login-daohang {
+	width: 100%;
+	height: 120px;
+	background-color: #fff;
+	z-index: 10;
+}
+
+#index-login-daohang-bao {
+	width: 1200px;
+	margin: 0px auto;
+	padding: 10px 0px;
+}
+
+#logo {
+	margin-top: 26px;
+	display: inline-block;
+	float: left;
+	width: 330px;
+}
+
+#index-login-daohang-zhong-xia {
+	display: inline-block;
+	width: 530px;
+}
+#index-login-daohang-zhong-xia img{
+	display: inline-block;
+	
+}
+
+.layui-input-block {
+	margin-left: 0px;
+}
+
+#index-login-daohang-zhong-shang a {
+
+	font-size: 14px;
+	color: #8f9aa8;
+	line-height: 32px;
+	position: relative;
+	cursor: pointer;
+	margin-right: 40px;
+}
+
+
+
+#index-login-daohang-zhong-shang a{
+	color: #5c5c5c;
+}
+
+#index-login-daohang-zhong-shang{
+	margin-top: 14px;
+	    margin-bottom: 10px;
+}
+
+
+
+
+.daohangCheck{
+	color: #5c5c5c;
+	border-bottom: 3px solid #ff5b6a;
+	 font-weight:600;
+}
+
+
+#index-login-daohang-zhong{
+	display: inline-block;
+}
+
+
+#index-login-daohang-you{
+	display: inline-block;
+	float: right;
+	margin-top: 40px;
+	overflow: hidden;
+}
+
+#index-login-daohang-you a:first-child{
+	display: block;
+	    width: 98px;
+	    padding-left: 18px;
+	    height: 42px;
+	    float: left;
+	    margin-left: 20px;
+	    font-size: 12px;
+	    line-height: 42px;
+	    font-weight: bold;
+	    text-align: center;
+	background: url(../images/navimg/3.png);
+	color: #ff5c00;
+}
+#index-login-daohang-you a:last-child{
+	display: block;
+	    width: 98px;
+	    padding-left: 18px;
+	    height: 42px;
+	    float: left;
+	    margin-left: 20px;
+	    font-size: 12px;
+	    line-height: 42px;
+	    font-weight: bold;
+	    text-align: center;
+	background: url(../images/navimg/4.png);
+	color: #fff;
+}
+    
+	
+	/* 不带logo的导航栏 */    
+	
+	#daohang {
+	    height: 50px;
+	    background: #ff3b4b;
+		
+	}
+	#daohang .w {
+	}
+	
+	.w {
+	    width: 1200px;
+	    margin: 0 auto;
+	}
+	
+	#daohang  li {
+	    width: 9%;
+	    float: left;
+	    text-align: center;
+	}
+	
+	#daohang li.active h3 {
+	    background: #fa1d30;
+	}
+	
+	#daohang li h3 {
+	    font-size: 16px;
+	    color: #fff;
+	    cursor: pointer;
+	    line-height: 50px;
+	}
+	#daohang li h3 a {
+	    color: #fff;
+	}
+
+	#nologo li h3 a{display: inline-block;width: 108px;height: 48px;}
+	
+	

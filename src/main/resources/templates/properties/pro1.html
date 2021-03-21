@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>楼盘首页</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../layui/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/floatmuen.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_head.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_footer.css"/>
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/properties/proNav.css">
+    <link rel="stylesheet" href="../css/properties/pro.css">
+</head>
+<body>
+    <ul id="floatMul"></ul>
+    <div id="head"></div>
+    <div id="navigation"></div>
+    <div id="proNav"></div>
+    <div id="proInfo">
+        <div class="proInfo_d1">
+            <div class="layui-carousel proInfo_left" id="test3" lay-filter="test4">
+                <div carousel-item="">
+                    <div th:each="imgpath,i:${session.p.imgPath.split(',')}" th:if="${i.index<4}"><img class="proInfo_Lb" th:src="@{'../images/houseimg/'+${imgpath}}" /></div>
+                </div>
+            </div>
+            <div class="proInfo_right">
+                <div class="proInfo_right_d">
+                    <div>参考均价</div>
+                    <div>
+                        <span>约 <span th:text="${session.p.price}" style="font-size: 24px;color: red;"></span>元/m² <span th:text="${session.p.describe}"></span></span>
+                    </div>
+                </div>
+                <div class="proInfo_right_d">
+                    <div>楼盘户型</div>
+                    <div>
+                        <span class="proInfo_right_d_span" th:each="h:${houselist}"><span th:text="${h.room}"></span>室约<span th:text="${h.houseSize}"></span>㎡</span>
+                        <span class="proInfo_right_d_span"><span class="layui-icon layui-icon-layouts"></span>全部户型</span>
+                    </div>
+                </div>
+                <div class="proInfo_right_d">
+                    <div>楼盘地址</div>
+                    <div>
+                        <span th:text="${session.p.propertiesAdd}"></span>
+                        <span style="color: red;"><span class="layui-icon layui-icon-location"></span>查看地图</span>
+                    </div>
+                </div>
+                <div class="proInfo_right_phone" style="position: relative;">
+                    <span class="layui-icon layui-icon-service s1"></span>
+                    <span class="s1" th:text="${session.p.salesPhone}"></span>
+                    <span class="s2">转</span>
+                    <span class="s1">505</span>
+                    <span class="s3">预约看房</span>
+                </div>
+                <div class="proInfo_right_info">
+                    <div>
+                        <span>最新开盘</span>
+                        <span>2018年12月</span>
+                    </div>
+                    <div>
+                        <div class="proInfo_right_info_left">
+                            <span>装修标准</span>
+                            <span>精装修</span>
+                        </div>
+                        <div class="proInfo_right_info_left">
+                            <span th:text="${session.p.deceloper}"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="proInfo_right_info_left">
+                            <span>产权年限</span>
+                        </div>
+                        <div class="proInfo_right_info_left">
+                            <span>用户点评共 152 条  查看点评</span>
+                        </div>
+                    </div>
+                    <div>查看更多楼盘详情>></div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="proInfo_zy">
+            <p style="font-size: 24px;color: #5C5C5C;margin-bottom: 10px;">置业顾问</p>
+            <ul class="proInfo_zy_ul">
+                <li class="proInfo_zy_li">
+                    <div class="proInfo_zy_left"><img src="../images/properties/pro1/rt.jfif" class="proInfo_zy_img" /></div>
+                    <div class="proInfo_zy_left">
+                        <p class="p1">A保利堂悦* 张柳清</p>
+                        <p class="p2">置业顾问</p>
+                        <p>
+                            <span class="proInfo_zy_left_zx">咨询</span>
+                            <span class="proInfo_zy_left_dh">电话</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="proInfo_goodHouse">
+            <p style="font-size: 24px;color: #5C5C5C;margin-bottom: 10px;">发现好房</p>
+            <ul class="proInfo_goodHouse_ul">
+                <li class="proInfo_goodHouse_li">
+                    <dl>
+                        <dt><img src="images/1.jpg" class="proInfo_goodHouse_li_img" /></dt>
+                        <dd class="dd1">保利堂悦</dd>
+                        <dd class="dd2">8700元/m²</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <div class="proInfo_d5">
+            <div class="proInfo_d1_left">
+                <div class="proInfo_d1_left_head">
+                    <span class="proInfo_d1_left_head_s1">动态资讯</span>
+                    <span class="proInfo_d1_left_head_s2">查看全部>></span>
+                </div>
+                <div class="proInfo_d1_left_gdt">
+                    <div class="proInfo_d1_left_content">
+                        <div class="proInfo_d1_left_content_d">
+                            <span class="dian"></span>
+                            <div class="proInfo_d1_left_content_d_d1">
+                                <span class="stitle" style="background-color: #FE8639;">动态</span>
+                                <span class="scon">保利堂悦 | 从圈层教育开始 给孩子一个美好未来</span>
+                                <span class="stime">2021-3-16</span>
+                            </div>
+                            <div class="proInfo_d1_left_content_d_d2">
+                                一个人赚的钱12.5%来自知识，87.5%来自关系。
+                            </div>
+                        </div>
+                        <div class="proInfo_d1_left_content_d">
+                            <span class="dian"></span>
+                            <div class="proInfo_d1_left_content_d_d1">
+                                <span class="stitle" style="background-color: #ECCC89;">开盘</span>
+                                <span class="scon2">保利堂悦开盘</span>
+                                <span class="stime">2021-1-05</span>
+                            </div>
+                        </div>
+                        <div class="proInfo_d1_left_content_d">
+                            <span class="dian"></span>
+                            <div class="proInfo_d1_left_content_d_d1">
+                                <span class="stitle" style="background-color: #1FE294;">项目</span>
+                                <span class="scon2">品牌：保利作为央企地产排名第一的中国最大的军工企业之一，
+								作为国家文化护航人，一直在推动城市发展，以共和国长子之“名”，展现美好生活同行者之姿
+								，并践行着城市理想人居新样本。而保利首入荆州，打造了仅湖 查看详细>></span>
+                                <span class="stime">2021-3-17</span>
+                            </div>
+                        </div>
+                        <div class="proInfo_d1_left_content_d">
+                            <span class="dian"></span>
+                            <div class="proInfo_d1_left_content_d_d1">
+                                <span class="stitle" style="background-color: #52C4F0;">证件</span>
+                                <span class="scon">鄂荆州商预字（2019）057号 </span>
+                                <span class="stime">2019-12-02</span>
+                            </div>
+                            <div class="proInfo_d1_left_content_d_d2">
+                                保利堂悦4#、5# 预售许可
+                            </div>
+                        </div>
+                        <div class="proInfo_d1_left_content_d">
+                            <span class="dian"></span>
+                            <div class="proInfo_d1_left_content_d_d1">
+                                <span class="stitle" style="background-color: #FE8639;">官方</span>
+                                <span class="scon">A保利堂悦* 张柳清</span>
+                                <span class="stime">2021-3-03</span>
+                            </div>
+                            <div class="proInfo_d1_left_content_d_d2">
+                                到保利堂悦来赏花
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proInfo_d1_right">
+                <div class="proInfo_d1_right_d1">
+                    <span class="proInfo_d1_right_d1_s1">团购报名</span>
+                    <span class="proInfo_d1_right_d1_s2">（我们将为您保密个人信息）</span>
+                </div>
+                <div class="proInfo_d1_right_d2">
+                    <div class="proInfo_d1_right_d2_d1">
+                        <span class="proInfo_d1_right_d2_d1_s1">您的姓名</span>
+                        <span class="proInfo_d1_right_d2_d1_s2">已有<span class="proInfoCount" style="color: red;">5</span>人成功报名团购</span>
+                    </div>
+                    <div class="proInfo_d1_right_d2_d2">
+                        <input class="proInfo_d1_right_d2_d2_inp" placeholder="请输入您的姓名" />
+                    </div>
+                    <div class="proInfo_d1_right_d2_d3">
+                        <input class="proInfo_d1_right_d2_d3_inp" placeholder="请输入您的电话号" />
+                        <span class="layui-btn layui-btn-danger proInfobtn">立即报名</span>
+                    </div>
+                    <div class="proInfo_d1_right_d2_d4">
+                        <div class="proInfo_d1_right_d2_d4_d">
+                            <p>1天前 173*****952 预约看房</p>
+                            <p>1天前 132*****792 预约看房</p>
+                            <p>1天前 177*****573 预约看房</p>
+                            <p>1天前 159*****492 预约看房</p>
+                            <p>1天前 130*****553 预约看房</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="proInfo_d6">
+            <div class="proInfo_d6_left">
+                <div class="proInfo_d6_left_d1">
+                    <span class="proInfo_d6_left_s1">楼盘户型</span>
+                    <span class="proInfo_d6_left_s2">更多户型（共<span th:text="${houselist.size()}"></span>条）>></span>
+                    <span class="proInfo_d6_left_s3">换一批</span>
+                </div>
+                <div class="proInfo_d6_left_d2">
+                    <div class="proInfo_d6_left_d2_hx" th:each="h:${houselist}">
+                        <div class="hx_d1">
+                            <img th:src="@{'../images/houseimg/'+${h.indoorImg.split(',')[0]}}" />
+                        </div>
+                        <div class="hx_d2">
+                            <div class="hx_d2_d1">
+                                <span class="hx_d2_d1_s1"><span th:text="${h.title}"></span>  建面约<span th:text="${h.houseSize}"></span>m²</span>
+                            </div>
+                            <div class="hx_d2_d2">
+                                <span class="hx_d2_d2_s1">在售</span>
+                                <span class="hx_d2_d2_s2">
+                                    <span th:text="${h.room}"></span>室
+                                    <span th:text="${h.hall}"></span>厅
+                                    <span th:text="${h.defend}"></span>卫
+                                </span>
+                            </div>
+                            <div class="hx_d2_d3">
+                                参考首付约<span th:text="${h.price*0.3}"></span>万
+                            </div>
+                            <div class="hx_d2_d4">
+                                参考总价约<span class="hx_d2_d4_s1" th:text="${h.price}">126.15</span>万左右
+                            </div>
+
+                        </div>
+                        <div class="hx_d3">
+                            <span class="hx_d3_s1">查看户型详情</span>
+                            <span class="hx_d3_s2">获取户型报价</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="proInfo_d6_right">
+                <div class="proInfo_d6_right_d1">
+                    <span class="proInfo_d6_right_s1">用户点评</span>
+                    <span class="proInfo_d6_right_s2" onclick="location.href='comm?index=1&size=6&type=1'">更多点评（共<span th:text="${countPage}"></span>条）>></span>
+                    <span class="proInfo_d6_right_s3"><span class="layui-icon layui-icon-edit"></span>写点评赢积分，我要点评</span>
+                </div>
+                <div class="proInfo_d6_right_d2">
+                    <div class="proInfo_d6_right_d2_pl" th:each="c:${commentlist}" th:value="${c.id}">
+                        <div class="pl1">
+                            <div class="pl1_d1">
+                                <img src="images/2.jfif" />
+                            </div>
+                            <div class="pl1_d2">
+                                <p class="pl1_d2_p1" th:text="${c.user.linkman}">憨憨猪</p>
+                                <p class="pl1_d2_p2" th:text="${c.content}"></p>
+                            </div>
+                            <div class="pl1_d3" th:text="${c.beginTime}">03-10</div>
+                        </div>
+                        <div class="pl2" th:if="${c.clist.size()}!=0">
+                            <div class="pl1_d1">
+                                <img src="images/2.jfif" />
+                            </div>
+                            <div class="pl1_d2">
+                                <p class="pl1_d2_p1" th:text="${c.clist.get(0).user.linkman}">憨憨猪</p>
+                                <p class="pl1_d2_p2" th:text="${c.clist.get(0).content}"></p>
+                            </div>
+                            <div class="pl1_d3" th:text="${c.clist.get(0).beginTime}">03-10</div>
+                        </div>
+                        <div class="pl3">
+							<span class="pl3_s1" onclick="pl_s1F(this)">
+                                <span class="layui-icon layui-icon-notice"></span>&nbsp;(<span class='plcount' th:text="${c.clist.size()}"></span>)
+							</span>
+                            &nbsp;|&nbsp;
+                            <span onclick='pl_s2F(this)'>
+                                <span class="layui-icon layui-icon-praise"></span>&nbsp;(<span class='goodcount' th:text="${c.good}"></span>)
+							</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="hfmain">
+            <div class="hf_com">
+                <div class="hf_com_d1">
+                    <span class="hf_com_d1_s1">楼盘回复</span>
+                    <span class="layui-icon layui-icon-close hf_com_d1_s2"></span>
+                </div>
+                <div class="hf_com_d2">
+                    <textarea class="hf_com_d2_tx" placeholder="请输入回复内容"></textarea>
+                    <div class="hf_com_d2_d1">
+                        <span class="hf_com_d2_ts"></span>
+                        温馨提示：请文明上网理性发言→_→
+                        <span class="hf_sub">立即回复</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer"></div>
+    <script th:inline="javascript">
+        layui.use(['carousel', 'form'], function(){
+            var carousel = layui.carousel
+                ,form = layui.form;
+            ;
+            //设定各种参数
+            var ins3 = carousel.render({
+                elem: '#test3',
+                indicator: "outside",
+                width: "580px",
+                height: "380px",
+            });
+
+            //事件
+            $('.demoSet').on('keyup', function(){
+                var value = this.value
+                    ,options = {};
+                if(!/^\d+$/.test(value)) return;
+
+                options[this.name] = value;
+                ins3.reload(options);
+            });
+            var imgArr = /*[[${session.p.imgPath.split(',')}]]*/ [];
+            for(var i=0;i<imgArr.length;i++){
+                $("#proInfo .layui-carousel-ind li").eq(i).css("background-image","url(../images/houseimg/"+imgArr[i]+")");
+                if(i>3){
+                    return;
+                }
+            }
+        });
+    </script>
+    <script th:inline="javascript">
+        $(function(){
+            $("#floatMul").load("../../publichtml/floatMune.html");
+            $("#head").load("../../publichtml/public_pageHead.html");
+            $("#footer").load("../../publichtml/pub_footer.html");
+            $("#navigation").load("../publichtml/navigation2.html");
+            $("#footer").load("../publichtml/pub_footer.html");
+            $("#proNav").load("../../publichtml/proNav.html",function(){
+                $(".proNav_ul>li").removeClass("proNav_ul_click").eq(0).addClass("proNav_ul_click");
+                var p = /*[[${session.p}]]*/ {};
+                $(".proTitle").text(p.name);
+                $(".proStatus").text(p.status);
+                var spanC='';
+                $.each(p.chapros,function (i,d){
+                    spanC+="<span class='proCha'>"+d.characteristic.name+"</span>";
+                })
+                $(".proNav_title_d1_d2").html(spanC);
+            });
+        });
+        $.ajax({
+            url:"../Adviser/find5",
+            type:"get",
+            success:function (data){
+                var li = "";
+                $.each(data,function (i,d){
+                    li += "<li class='proInfo_zy_li'>"+
+                        "<div class='proInfo_zy_left'><img src='../images/gwimg/"+d.consultanPortrait+"' class='proInfo_zy_img' /></div>"+
+                        "   <div class='proInfo_zy_left'>"+
+                        "       <p class='p1'>"+d.consultantName+"</p>"+
+                        "       <p class='p2'>置业顾问</p>"+
+                        "       <p>"+
+                        "           <span class='proInfo_zy_left_zx'>咨询</span>"+
+                        "           <span class='proInfo_zy_left_dh'>电话</span>"+
+                        "       </p>"+
+                        "       </div>"+
+                        " </li>"
+                });
+                $(".proInfo_zy_ul").html(li);
+            }
+        });
+        $.ajax({
+            url:"proAll",
+            type:"get",
+            data: {id: /*[[${session.p.id}]]*/ 1},
+            success:function (data){
+                var li = "";
+                $.each(data,function (i,d){
+                    li +=  "<li class='proInfo_goodHouse_li' onclick='tzxf("+d.id+")'>"+
+                            "<dl>"+
+                                "<dt><img src='../images/houseimg/"+d.imgPath.split(',')[0]+"' class='proInfo_goodHouse_li_img' /></dt>"+
+                                "<dd class='dd1'>"+d.name+"</dd>"+
+                                "<dd class='dd2'>"+d.price+"元/m²</dd>"+
+                            "</dl>"+
+                        "</li>";
+                });
+                $(".proInfo_goodHouse_ul").html(li);
+            }
+        });
+        function tzxf(id){
+            location.href = "pro1?id="+id;
+        }
+        var i = 0,count=5;
+        function move(){
+            $(".proInfo_d1_right_d2_d4").scrollTop(i++);
+            if(i==42) {
+                $(".proInfo_d1_right_d2_d4_d").append($(".proInfo_d1_right_d2_d4_d>p:first"));
+                $(".proInfo_d1_right_d2_d4").scrollTop(i=0);
+            }
+        }
+        setInterval(move,30);
+        $(".proInfobtn").click(function(){
+            var ph = $(".proInfo_d1_right_d2_d3_inp").val();
+            console.log(ph.substring(8));
+            if(ph.length==11){
+                count++;
+                $(".proInfoCount").text(count);
+                $(".proInfo_d1_right_d2_d4_d").append("<p>1小时内 "+ph.substring(0,3)+"*****"+ph.substring(8)+" 预约看房</p>");
+            }else{
+                alert("手机不正确");
+            }
+        });
+
+
+        //评论
+        var fid=0;
+        $(".proInfo_d6_right_s3").click(function (){
+            fid=0;
+            $("#hfmain").css("display","flex");
+        });
+        <!--    模板    -->
+        var pldiv;//保存是点的评论div控件
+        $(".hf_com_d1_s2").click(function(){
+            $(".hf_com_d2_tx").val("");
+            $("#hfmain").css("display","none");
+        });
+        function pl_s1F(t){
+            pldiv= $(t).parent().parent();
+            fid = $(pldiv).attr("value");
+            console.log(fid);
+            console.log($(pldiv).html());
+            $("#hfmain").css("display","flex");
+        };
+        $(".hf_sub").click(function (){
+            subpl();
+        });
+        function subpl(){
+            var tx = $(".hf_com_d2_tx").val().trim();
+            if(tx.length==0){
+                $(".hf_com_d2_ts").text("请输入回复内容!");
+            }else{
+                $(".hf_com_d2_ts").text("");
+                $.ajax({
+                    url:"../comm/insert",
+                    data:{context:tx,pid:/*[[${session.p.id}]]*/ 1,fid},
+                    async:false,
+                    success:function (data){
+                        if(data){
+                            if(fid!=0){
+                                var date = new Date();
+                                var d = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDay()+" "+
+                                    date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+
+                                var pl2div =  "<div class='pl2'>"+
+                                    "<div class='pl1_d1'>"+
+                                    "<img src='images/2.jfif' />"+
+                                    "</div>"+
+                                    "<div class='pl1_d2'>"+
+                                    "<p class='pl1_d2_p1'>"+('憨憨猪')+"</p>"+
+                                    "<p class='pl1_d2_p2'>"+tx+"</p>"+
+                                    "</div>"+
+                                    "<div class='pl1_d3'>"+d+"</div>"+
+                                    "</div>";
+                                $(pldiv).children(".pl2").remove();
+                                $(pldiv).children(".pl1").after(pl2div);
+                                $("#hfmain").css("display","none");
+                                var count = $(pldiv).find(".plcount").text();
+                                $(pldiv).find(".plcount").text(count*1+1);
+                            }
+                        }else{
+                            $(".hf_com_d2_ts").text("回复失败!");
+                        }
+                    }
+                });
+                if(fid==0){//判断0评论 显示出来
+                    $.ajax({
+                        url:"../comm/selectByNew",
+                        dataType:"json",
+                        success:function (data){
+                            var pl1div = "<div class='proInfo_d6_right_d2_pl' value='"+data.id+"'>"+
+                                "<div class='pl1'>"+
+                                " <div class='pl1_d1'>"+
+                                "<img src='images/2.jfif' />"+
+                                "</div>"+
+                                "<div class='pl1_d2'>"+
+                                "<p class='pl1_d2_p1'>"+data.user.linkman+"</p>"+
+                                "<p class='pl1_d2_p2'>"+data.content+"</p>"+
+                                "</div>"+
+                                "<div class='pl1_d3'>"+data.beginTime+"</div>"+
+                                "</div>"+
+                                "<div class='pl3'>"+
+                                "<span class='pl3_s1' onclick='pl_s1F(this)'>"+
+                                    "<span class='layui-icon layui-icon-notice'></span>&nbsp;(<span class='plcount'>0</span>)"+
+                                "</span>"+
+                                "&nbsp;|&nbsp;"+
+                                "<span>"+
+                                    "<span class='layui-icon layui-icon-praise'></span>&nbsp;(<span class='goodcount'>"+data.good+"</span>)"+
+                                "</span>"+
+                                "</div>"+
+                                "</div>";
+                            $(pl1div).children().eq(2).remove();
+                            $(".proInfo_d6_right_d2").prepend(pl1div);
+                        }
+                    });
+                    $(".hf_com_d2_tx").val("");
+                }
+                $(".hf_com_d2_tx").val("");
+                $("#hfmain").css("display","none");
+            }
+        }
+    </script>
+</body>
+</html>

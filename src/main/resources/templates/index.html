@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>荆州房产信息网_荆州好房子网_荆州房地产门户</title>
+
+    <!-- 小图显示在浏览器的标签上 -->
+    <link rel="shortcut icon" type="image/ico" href="https://www.jzhfz.com/favicon.ico" >
+    <!-- layui样式导入 -->
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+
+    <script src="../js/jquery-1.12.4.js"></script>
+    <!--中间的固定定位-->
+    <link rel="stylesheet" type="text/css" href="../css/floatmuen.css"/>
+    <!-- 头部样式导入 -->
+    <link rel="stylesheet" type="text/css" href="../css/pub_head.css" />
+    <!-- 尾部样式导入 -->
+    <link rel="stylesheet" type="text/css" href="../css/pub_footer.css" />
+    <!-- jquery JS导入 -->
+    <script src="../js/jquery-1.12.4.js"></script>
+
+
+
+    <!-- layui JS导入 -->
+    <script src="../layui/layui.js"></script>
+
+    <!-- 导航栏css导入 -->
+    <link  rel="stylesheet" href="../css/navigation.css" />
+
+    <!-- 本页面样式导入 -->
+    <link rel="stylesheet" href="../css/index.css" />
+
+    <link rel="shortcut icon" type="image/ico" href="https://www.jzhfz.com/favicon.ico">
+    <link rel="stylesheet" href="https://www.jzhfz.com/static/skin/tfy/css/tfy-reset.css?20210220" />
+    <link rel="stylesheet" href="https://www.jzhfz.com/static/skin/tfy/css/style.css?20201122" />
+    <link rel="stylesheet" href="https://www.jzhfz.com/static/skin/tfy/css/tfy-login.css?20190611" />
+    <link rel="stylesheet" href="https://www.jzhfz.com/static/skin/tfy/css/propaganda.css?202010" />
+
+
+</head>
+<body>
+<ul id="floatMul"></ul>
+<div id="head"></div><!-- 头部导入 -->
+
+
+
+<!-- 最顶上的广告 -->
+<div class="index-tou-guanggao layui-row">
+    <a href="javascript:;" class="layui-col-md12">
+
+        <img src="../images/index/3269ce13a83fe992ad0a54911f65618884e11e49.gif" />
+    </a>
+
+    <a href="javascript:;" class="layui-col-md12">
+        <img src="../images/index/4eac34138b8491d19434cfd7f2b3a5bd5707e01a.gif" />
+    </a>
+
+    <a href="javascript:;" class="layui-col-md12">
+        <img src="../images/index/890bb5013c4efc408457d30ed93225e081eb5459.gif" />
+    </a>
+
+    <a href="javascript:;" class="layui-col-md12">
+        <img src="../images/index/d20ee45992a01bdbac906a265db95491994c386f.gif" />
+    </a>
+</div>
+
+<div id="index-login-daohang-dr"></div><!-- 导入导航栏的代码 -->
+
+<!-- 导航栏下面的一张大图片 -->
+<div style="width: 100%;">
+    <div style="width: 1440px;margin: 0px auto;">
+        <img src="../images/index/41b4696aca9d1a0d8809f826b296e8041d932659.jpeg" />
+    </div>
+</div>
+
+<!-- 楼盘的简单筛选 -->
+<div id="saixuanbao">
+    <div id="saixuan">
+        <ul class="layui-row">
+            <li class="layui-col-md3 layui-col-xs3 layui-col-sm3 layui-col-lg3">
+                <div class="saixuanshang">
+                    <img class="q_s_img" src="../images/index/hot_search.png" alt="">
+                    <div class="q_s_tit">
+                        热搜区域
+                    </div>
+                </div>
+                <div class="saixuanxia">
+                    <ul id="saixuanxia-ul1">
+                        <script>
+                            $.ajax({
+                                url:'/Area/selectAllIndex',
+                                type:'post',
+                                dataType:'JSON',
+                                success:function (data){
+                                    var s='';
+                                    $.each(data,function (i,d){
+                                        s =s+'<li><a href=\"javascript:;\">'+d.name+'</a></li>';
+                                    })
+                                    $("#saixuanxia-ul1").html(s);
+                                }
+                            })
+                        </script>
+                       <!-- <li><a href="javascript:;">荆州区</a></li>
+                        <li><a href="javascript:;">沙市区</a></li>
+                        <li><a href="javascript:;">开发区</a></li>
+                        <li><a href="javascript:;">公安县</a></li>
+                        <li><a href="javascript:;">江陵县</a></li>-->
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-col-md3 layui-col-xs3 layui-col-sm3 layui-col-lg3">
+                <div class="saixuanshang">
+                    <img class="q_s_img" src="../images/index/hot_search.png" alt="">
+                    <div class="q_s_tit">
+                        价格区间
+                    </div>
+                </div>
+                <div class="saixuanxia">
+                    <ul id="saixuanxia-ul2">
+                        <li><a href="javascript:;">5000元以下</a></li>
+                        <li><a href="javascript:;">5000-6000元</a></li>
+                        <li><a href="javascript:;">6000-7000元</a></li>
+                        <li><a href="javascript:;">7000-8000元</a></li>
+                        <li><a href="javascript:;">8000-9000元</a></li>
+                        <li><a href="javascript:;">9000-10000元</a></li>
+                        <li><a href="javascript:;">10000元以上</a></li>
+                        <li><a href="javascript:;">不限</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-col-md3 layui-col-xs3 layui-col-sm3 layui-col-lg3">
+                <div class="saixuanshang">
+                    <img class="q_s_img" src="../images/index/hot_search.png" alt="">
+                    <div class="q_s_tit">
+                        类型检索
+                    </div>
+                </div>
+                <div class="saixuanxia">
+                    <ul id="saixuanxia-ul3">
+                        <script>
+                            $.ajax({
+                                url:'/housetype/selectAllIndex',
+                                type:'post',
+                                dataType:'JSON',
+                                success:function (data){
+                                    var s='';
+                                    $.each(data,function (i,d){
+                                        s =s+'<li><a href=\"javascript:;\">'+d.name+'</a></li>';
+                                    })
+                                    $("#saixuanxia-ul3").html(s);
+                                }
+                            })
+                        </script>
+                       <!-- <li><a href="javascript:;">小高层</a></li>
+                        <li><a href="javascript:;">多层</a></li>
+                        <li><a href="javascript:;">低层</a></li>
+                        <li><a href="javascript:;">高层</a></li>
+                        <li><a href="javascript:;">超高层</a></li>
+                        <li><a href="javascript:;">独栋别墅</a></li>
+                        <li><a href="javascript:;">叠拼</a></li>
+                        <li><a href="javascript:;">双拼</a></li>
+                        <li><a href="javascript:;">联排</a></li>
+                        <li><a href="javascript:;">花园洋房</a></li>
+                        <li><a href="javascript:;">写字楼</a></li>
+                        <li><a href="javascript:;">大平层</a></li>
+                        <li><a href="javascript:;">小公寓</a></li>
+                        <li><a href="javascript:;">商铺</a></li>
+                        <li><a href="javascript:;">别墅</a></li>-->
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-col-md3 layui-col-xs3 layui-col-sm3 layui-col-lg3">
+                <div class="saixuanshang">
+                    <img class="q_s_img" src="../images/index/hot_search.png" alt="">
+                    <div class="q_s_tit">
+                        楼盘特色
+                    </div>
+                </div>
+                <div class="saixuanxia">
+                    <ul id="saixuanxia-ul4">
+                        <script>
+                            $.ajax({
+                                url:'/characteristic/selectAll',
+                                type:'post',
+                                dataType:'JSON',
+                                success:function (data){
+                                    var s='';
+                                    $.each(data,function (i,d){
+                                        s =s+'<li><a href=\"javascript:;\">'+d.name+'</a></li>';
+                                    })
+                                    $("#saixuanxia-ul4").html(s);
+                                }
+                            })
+                        </script>
+                       <!-- <li><a href="javascript:;">品牌房企</a></li>
+                        <li><a href="javascript:;">刚需推荐</a></li>
+                        <li><a href="javascript:;">改善好盘</a></li>
+                        <li><a href="javascript:;">热门新房</a></li>
+                        <li><a href="javascript:;">优惠楼盘</a></li>
+                        <li><a href="javascript:;">新盘首开</a></li>
+                        <li><a href="javascript:;">VR看房</a></li>
+                        <li><a href="javascript:;">低总价</a></li>-->
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <a href="/selhouse/newhouse"><div id="saixuanxia-hou">更多></div></a>
+
+    </div>
+
+
+</div>
+
+
+<!-- 最顶上的下面广告 -->
+<div class="index-tou-guanggao layui-row">
+    <a href="javascript:;" class="layui-col-md12">
+
+        <img src="../images/index/3269ce13a83fe992ad0a54911f65618884e11e49.gif" />
+    </a>
+
+    <a href="javascript:;" class="layui-col-md12">
+        <img src="../images/index/4eac34138b8491d19434cfd7f2b3a5bd5707e01a.gif" />
+    </a>
+
+    <a href="javascript:;" class="layui-col-md12">
+        <img src="../images/index/890bb5013c4efc408457d30ed93225e081eb5459.gif" />
+    </a>
+</div>
+
+
+
+<!-- 顶部头条代码 -->
+<div class="tfy-floor1">
+    <div class="tfy-l fl">
+        <div class="mt">
+            <div class="tfy-img fl"><img src="https://www.jzhfz.com/static/skin/tfy/img/img5.png"></div>
+            <div class="tfy-tit fl">
+                <h3>
+                    <a id="toutiao-h3" href="https://www.jzhfz.com/news/44842.html" target="_blank">
+                        恒大荆州健康城投资百亿显野心！ </a>
+                </h3>
+            </div>
+        </div>
+        <div class="slide3">
+
+            <div class="layui-carousel" id="test1">
+                <div carousel-item>
+                    <div>
+                        <a href="https://www.jzhfz.com/news/44805.html" target="_blank"><img src="../images/index/390712527b8f970f0158e19c4bf2bae6b6ea2abb.jpeg"></a></li>
+                    </div>
+                    <div>
+                        <a href="https://www.jzhfz.com/news/44805.html" target="_blank"><img src="../images/index/8fe95ce5a012352522d01da8c495c66fa98b5095.jpeg"></a></li>
+                    </div>
+                    <div>
+                        <a href="https://www.jzhfz.com/news/44805.html" target="_blank"><img src="../images/index/8ca19948ff46b3f684f732349cd19ece88fd7ad9.jpeg"></a></li>
+                    </div>
+                    <div>
+                        <a href="https://www.jzhfz.com/news/44805.html" target="_blank"><img src="../images/index/06e382ad23d9811048c7ab2e8f94316e878be7db.jpeg"></a></li>
+                    </div>
+                    <div>
+                        <a href="https://www.jzhfz.com/news/44805.html" target="_blank"><img src="../images/index/ead79a0ececad674d1a078a3851b359ecc2834b0.jpeg"></a></li>
+                    </div>
+                </div>
+            </div>
+            <!-- 条目中可以是任意内容，如：<img src=""> -->
+
+            <script>
+                layui.use('carousel', function(){
+                    var carousel = layui.carousel;
+                    //建造实例
+                    carousel.render({
+                        elem: '#test1'
+                        ,width: '100%' //设置容器宽度
+                        ,arrow: 'always' //始终显示箭头
+                        //,anim: 'updown' //切换动画方式
+                    });
+                });
+            </script>
+
+        </div>
+    </div>
+
+    <div class="tfy-r fr">
+        <div class="mt">
+            <div class="tfy-img fl">关注荆州</div>
+            <div class="tfy-btn tfy-overhidden fr">
+                <ul>
+                    <li><a style=" text-decoration: none;" href="https://www.jzhfz.com/news/list-6.html">本地楼市</a></li>
+                    <li><a style=" text-decoration: none;" href="https://www.jzhfz.com/news/list-15.html">购房指南</a></li>
+                    <li><a style=" text-decoration: none;" href="https://www.jzhfz.com/news/list-34.html">土地市场</a></li>
+                    <li><a style=" text-decoration: none;" href="https://www.jzhfz.com/news/list-33.html">市场报告</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mc">
+            <h2 class="nowrap lineheight40">
+                <a style=" text-decoration: none;" href="news2" target="_blank">
+                    荆州城市中心的湖居生活 </a>
+            </h2>
+            <p class="show2lines">
+                <a style=" text-decoration: none;font-size: 14px;" href="new2" target="_blank">城市，因水而灵动。依傍长江“黄金水道”的荆州，自古以来就有着得天独厚的水资源优势，素有“水乡泽国”之称，又有“百湖之市”的美誉。</a>
+            </p>
+        </div>
+        <div class="mcc">
+            <img src="https://www.jzhfz.com/static/skin/tfy/img/img6.png">
+            <div class="slide1">
+                    <div class="tempWrap" style="overflow:hidden; position:relative; height:32px">
+                        <ul id="wufeng" class="infoList" style=" top: 0px; position: relative; padding: 0px; margin: 0px;">
+                            <script>
+                                setInterval(a,3000);
+                                var js=0;
+                                function a(){
+                                    js++;
+                                    if(js==8){
+                                        js=0;
+                                    }
+                                    $("#wufeng").animate({"top":"-"+(js*32)+"px"},800,function (){
+
+                                    })
+                                }
+
+                            </script>
+                            <li style="height: 32px;"><a style=" text-decoration: none;font-size: 14px;" class="nowrap" href="news1"
+                                                         target="_blank">
+                                大商名商强势入驻丨中农联奋力推进荆州农业升级 </a>
+                            </li>
+                            <li style="height: 32px;"><a style=" text-decoration: none;font-size: 14px;" class="nowrap" href="news2"
+                                                         target="_blank">
+                                荆州城市中心的湖居生活 楚天都市·御湖一品即将面世 </a>
+                            </li>
+                            <li style="height: 32px;"><a style=" text-decoration: none;font-size: 14px;" class="nowrap" href="news3"
+                                                         target="_blank">
+                                沙市白水还迁房、公共卫生中心等项目施工进度 </a>
+                            </li>
+                            <li style="height: 32px;"><a style=" text-decoration: none;font-size: 14px;" class="nowrap" href="news4"
+                                                         target="_blank">
+                                蝉联百强房企TOP37、特色地产运营TOP1 </a>
+                            </li>
+                            <li style="height: 32px;"><a style=" text-decoration: none;font-size: 14px;" class="nowrap" href="news5"
+                                                         target="_blank">
+                                与城市共向上丨世茂三盘联动 悦尚暖春新花漾</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <div class="mb">
+            <dl>
+                <dd class="nowrap"><a style=" text-decoration: none;font-size: 14px;" href="news3"
+                                      target="_blank">
+                    沙市白水还迁房、公共卫生中心等项目施工进度 </a></dd>
+                <dd class="nowrap"><a style=" text-decoration: none;font-size: 14px;"
+                                      target="_blank">
+                    沙北最热学区房！荆州海洋世界•海棠湾3月最新工程进展 </a></dd>
+                <dd class="nowrap"><a style=" text-decoration: none;font-size: 14px;"
+                                      target="_blank">
+                    荆州金科中梁博翠江樾正当红 百万福利正在放送 </a></dd>
+                <dd class="nowrap"><a style=" text-decoration: none;font-size: 14px;"
+                                      target="_blank">
+                    业主咨询 |江津西路北湖小区 何时引进共享电梯？ </a></dd>
+                <dd class="nowrap"><a style=" text-decoration: none;font-size: 14px;"
+                                      target="_blank">
+                    杨泗村沙北新区征迁交地清零工作正在进行 </a></dd>
+                <dd class="nowrap"><a style=" text-decoration: none;font-size: 14px;"
+                                      target="_blank">
+                    魅力岂止在院落！人信悦玺大宅之礼 让户型更懂精细化的生活 </a></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="service_box">
+    <div class="label">
+        <p class="label_name">信息查询</p>
+        <p class="label_en_name">infomation service</p>
+    </div>
+    <div class="service_list" style="width: 1000px">
+        <a href="javascript:;" class="next"><img src="https://www.jzhfz.com/static/skin/tfy/img/img27.png" /></a>
+        <div class="slide_box">
+            <a href="https://www.jzhfz.com/box.php?id=1" target="_blank">
+                <div class="service_item">
+                    <p>
+                        <img src="https://images.jzhfz.com/attachment/focus/20200811/536fb6040fe86d26e6c8fb85d43f9c04f1bfb2f3.jpeg" alt="">
+                    </p>
+                    <p class="text">荆州预售许可证查询系统</p>
+                </div>
+            </a>
+            <a href="https://www.jzhfz.com/box.php?id=2" target="_blank">
+                <div class="service_item">
+                    <p>
+                        <img src="https://images.jzhfz.com/attachment/focus/20200811/28d70a6997eaa33c0c820d8a91b34bda586e5b3d.jpeg" alt="">
+                    </p>
+                    <p class="text">荆州土地市场交易查询</p>
+                </div>
+            </a>
+            <a href="https://www.jzhfz.com/box.php?id=3" target="_blank">
+                <div class="service_item">
+                    <p>
+                        <img src="https://images.jzhfz.com/attachment/focus/20200811/db945a15f0ca6b4c7bf34e5ef52fdc0121ee2d33.jpeg" alt="">
+                    </p>
+                    <p class="text">荆州商品房备案查询系统</p>
+                </div>
+            </a>
+            <a href="https://www.jzhfz.com/box.php?id=4" target="_blank">
+                <div class="service_item">
+                    <p>
+                        <img src="https://images.jzhfz.com/attachment/focus/20200811/5643857b42dd42247df1db7af3fab37ce7cacec9.jpeg" alt="">
+                    </p>
+                    <p class="text">荆州二手房备案查询系统</p>
+                </div>
+            </a>
+            <a href="https://www.jzhfz.com/box.php?id=5" target="_blank">
+                <div class="service_item">
+                    <p>
+                        <img src="https://images.jzhfz.com/attachment/focus/20200811/1ec32caa14a6987a9f0a3991bc2315cbd955a752.jpeg" alt="">
+                    </p>
+                    <p class="text">荆州住房公积金</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!--引入常德自定义form表单-->
+<!--信息栏-->
+<!-- TAB 推荐楼盘暂时隐藏 -->
+<div class="tfy-floor3">
+    <div class="w">
+
+
+        <div class="mc">
+
+            <!-- <span class="clearfix"></span> -->
+            <div class="tfy-l fl">
+                <div class="mt lpsy_title">
+                    <h3><a href="https://www.jzhfz.com/loupan/" target="_blank">荆州新房</a></h3>
+                </div>
+                <div class="tfy-t">
+                    <h2>购房工具</h2>
+                    <ul>
+                        <li><a href="https://www.jzhfz.com/loupan/map.html" target="_blank">
+                            <img src="https://www.jzhfz.com/static/skin/tfy/img/img12.png" />
+                            <p>地图找房</p>
+                        </a></li>
+                        <li><a href="yushou/" target="_blank">
+                            <img src="https://www.jzhfz.com/static/skin/tfy/img/img13.png" />
+                            <p>预售证查询</p>
+                        </a></li>
+                        <li><a href="/tool/" target="_blank">
+                            <img src="https://www.jzhfz.com/static/skin/tfy/img/img14.png" />
+                            <p>房贷计算器</p>
+                        </a></li>
+                        <li class="book_sli">
+                            <div class="slide1 book_slider">
+                                <div class="bd book_slide_con">
+                                    <ul class="infoList book_slide_con_c">
+                                        <li><a class="nowrap" href="yushou/show.php?id=234" target="_blank">海伦堡玖悦府房地产建设项目8#、12#【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=233" target="_blank">纪南曲池里一期C3#、C5#、C9#【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=232" target="_blank">保利.公园壹号四期1#、4#【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=231" target="_blank">亿和未来城住宅小区项目【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=229" target="_blank">金辉融宇P（2018）011号宗地房地产项目5#、6#、7#楼【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=228" target="_blank">中农联荆州智慧云仓城一期2#、3#、19#、24#、25#楼【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=227" target="_blank">碧桂园.中央公园6#、9#【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=226" target="_blank">碧桂园.央玺6#、9#、12#【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=225" target="_blank">阳光城文澜府公馆一期14#、18#楼【预售许可】公告</a></li>
+                                        <li><a class="nowrap" href="yushou/show.php?id=224" target="_blank">楚天都市润园2#、3#、11#、12#、13#、15#楼【预售许可】公告</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tfy-b new-tfy-b">
+                    <div class="title_box">
+                        <h2 class="calendar_title" id="calendar_title">开盘活动</h2>
+                        <div class="calendar_box">
+                            <div class="calendar_list">
+                                <div class="calendar_item" style="display: none"></div>
+                                <div class="calendar_item">2月</div>
+                                <div class="calendar_item">3月</div>
+                                <div class="calendar_item">4月</div>
+
+                            </div>
+                            <a href="javascript:;" class="next"><img src="https://www.jzhfz.com/static/skin/tfy/img/img27.png" /></a>
+                        </div>
+                        <span class="clear_both"></span>
+                    </div>
+                    <div class="tfy-box">
+
+                        <div class="calendar-data-box" style="display: block">
+                            <a href="https://www.jzhfz.com/news/44244.html">
+                                <div class="calendar-data-item">
+                                    <div class="data-title">楚天都市润园现象级热销 首开劲销200套！</div>
+                                    <p>
+                                        <span class="build-name">楚天都市润园</span>
+                                        <span class="data-time">一个月前</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="https://www.jzhfz.com/news/44000.html">
+                                <div class="calendar-data-item">
+                                    <div class="data-title">盛启荆州滨江新章 世茂长投云筑滨江首开告捷！</div>
+                                    <p>
+                                        <span class="build-name">世茂长投云筑滨江</span>
+                                        <span class="data-time">一个月前</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="https://www.jzhfz.com/news/43906.html">
+                                <div class="calendar-data-item">
+                                    <div class="data-title">交投明珠府丨耀世而来 11月15日盛大开盘！</div>
+                                    <p>
+                                        <span class="build-name">交投明珠府</span>
+                                        <span class="data-time">一个月前</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="https://www.jzhfz.com/news/43731.html">
+                                <div class="calendar-data-item">
+                                    <div class="data-title">欧亚达阅城10月首开劲销200套，何以“圈粉”全城？</div>
+                                    <p>
+                                        <span class="build-name">欧亚达阅城</span>
+                                        <span class="data-time">一个月前</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="https://www.jzhfz.com/news/43087.html">
+                                <div class="calendar-data-item">
+                                    <div class="data-title">吾耀荆州•点亮繁华——荆州吾悦广场购物中心开业倒计时80天暨亮灯仪式盛典”隆重启幕。</div>
+                                    <p>
+                                        <span class="build-name">荆州吾悦广场</span>
+                                        <span class="data-time">一个月前</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="calendar-data-box ">
+                        </div>
+                        <div class="calendar-data-box ">
+                        </div>
+                        <div class="calendar-data-box ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tfy-r fr sli1 loupan_list">
+                <div class="mt">
+
+                    <div class="tfy-r lp_r">
+                        <a href="https://www.jzhfz.com/loupan/map.html" class="tfy-map fr" style="background: url(https://www.jzhfz.com/static/skin/tfy/img/img11.png);">地图找房</a>
+                        <div class="tfy-search fr" data-type="loupan" data-href="https://www.jzhfz.com/loupan/?title">
+                            <input type="text" id="searchs_keyword" placeholder="请输入楼盘名称" />
+                            <button id="searchs_button">搜索</button>
+                            <script>
+                                $("#searchs_button").click(function (){
+                                    var zhi = $("#searchs_keyword").val();
+                                    location.href="http://localhost:8080/selhouse/newhouse?name2="+zhi;
+                                })
+                            </script>
+                        </div>
+                        <div class="loupan_list_t fr">
+
+                            <div onclick="loupandian(-1)" class="new_tuijian new_t active"> 新房推荐</div>
+                            <div onclick="loupandian(1)"  class="new_1 new_t " data-id="1">品牌房企</div>
+                            <div onclick="loupandian(4)"  class="new_4 new_t" data-id="4">热门新房</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="build_con">
+                    <!-- 新房推荐 -->
+                    <div class="bd_con bd_list" style="display: block">
+                        <div class="bd ">
+                            <ul id="loupan-ul">
+                                <script>
+                                    $(".new_t").click(function (){
+                                        $(this).siblings().removeClass("active");
+                                        $(this).addClass("active");
+                                    })
+
+                                    var zhi =-1;
+                                    loupandian(zhi);
+                                    function loupandian(zhi){
+
+                                    $.ajax({
+                                        url:'/properties/findAllIndexTJ',
+                                        type:'post',
+                                        dataType:'json',
+                                        data:{"tj":zhi},
+                                        success:function(data){
+                                            var s ='';
+                                            $.each(data,function (i,d){
+                                                s = s + '<li class="tfy-item">\n' +
+                                                    '                                    <a href="/proinfo/pro1?id='+d.id+'" target="_blank">\n' +
+                                                    '                                        <div class="tfy-img">\n' +
+                                                    '                                            <img alt=\"'+d.name+'\" src="../images/houseimg/'+d.imgPath.split(',')[0]+'" />\n' +
+                                                    '                                            <div class="type">\n' +
+                                                    '                                                '+d.status+' </div>\n' +
+                                                    '\n' +
+                                                    '                                        </div>\n' +
+                                                    '                                        <div class="tfy-tit">\n' +
+                                                    '                                            <div class="mt">\n' +
+                                                    '                                                <div class="fl">'+d.name+'</div>\n' +
+                                                    '                                                <div class="fr">均价<span>'+d.price+'</span>元/m²</div>\n' +
+                                                    '                                            </div>\n' +
+                                                    '                                            <div class="mb">\n' +
+                                                    '                                                <div class="fl nowrap">\n' +
+                                                    '                                                    <span>'+d.houseType.name+'</span>\n' +
+                                                    '\n' +
+                                                    '                                                </div>\n' +
+                                                    '                                                <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />'+d.propertiesAdd+' </div>\n' +
+                                                    '                                            </div>\n' +
+                                                    '                                        </div>\n' +
+                                                    '                                    </a>\n' +
+                                                    '                                </li>';
+                                            })
+                                            $("#loupan-ul").html(s);
+                                         }
+                                    })
+                                    }
+                                </script>
+                            </ul>
+                        </div>
+                        <div class="hd num-slide" style="position: absolute;bottom: 0;left: 50%; height: 5px;">
+                            <li style="width:10px; height: 2px; background: #fff;"><span> </span></li>
+                        </div>
+                    </div>
+                    <!-- 热销 -->
+                    <div class="bd_con">
+                        <ul>
+                            <li class="tfy-item">
+                                <a href="https://www.jzhfz.com/loupan/248.html" target="_blank">
+                                    <div class="tfy-img">
+                                        <img alt="楚天都市润园" src="https://images.jzhfz.com/attachment/build/20200824/ed133cbb30f68de5e2e3e757666e4f58a1a9718b.jpeg?x-oss-process=style/w_382" />
+                                        <div class="type">
+                                            在售 </div>
+
+                                    </div>
+                                    <div class="tfy-tit">
+                                        <div class="mt">
+                                            <div class="fl">楚天都市润园</div>
+                                            <div class="fr">均价<span>6500</span>元/m²</div>
+                                        </div>
+                                        <div class="mb">
+                                            <div class="fl nowrap">
+                                                <span>高层</span>
+                                                <span>花园洋房</span>
+
+                                            </div>
+                                            <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />城东片区 </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tfy-item">
+                                <a href="https://www.jzhfz.com/loupan/246.html" target="_blank">
+                                    <div class="tfy-img">
+                                        <img alt="世茂长投云筑滨江" src="https://images.jzhfz.com/attachment/build/20200724/23683fc86208e1cf6d047265217aa4015fd97e03.jpeg?x-oss-process=style/w_382" />
+                                        <div class="type">
+                                            在售 </div>
+
+                                    </div>
+                                    <div class="tfy-tit">
+                                        <div class="mt">
+                                            <div class="fl">世茂长投云筑滨江</div>
+                                            <div class="fr">均价<span>7700</span>元/m²</div>
+                                        </div>
+                                        <div class="mb">
+                                            <div class="fl nowrap">
+                                                <span>高层</span>
+
+                                            </div>
+                                            <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />武德片区 </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tfy-item">
+                                <a href="https://www.jzhfz.com/loupan/245.html" target="_blank">
+                                    <div class="tfy-img">
+                                        <img alt="金科集美书院" src="https://images.jzhfz.com/old/2020/0422/15875184898782242233.jpg?x-oss-process=style/w_382" />
+                                        <div class="type">
+                                            在售 </div>
+
+                                    </div>
+                                    <div class="tfy-tit">
+                                        <div class="mt">
+                                            <div class="fl">金科集美书院</div>
+                                            <div class="fr">均价<span>8300</span>元/m²</div>
+                                        </div>
+                                        <div class="mb">
+                                            <div class="fl nowrap">
+                                                <span>高层</span>
+
+                                            </div>
+                                            <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />沙北新区 </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tfy-item">
+                                <a href="https://www.jzhfz.com/loupan/243.html" target="_blank">
+                                    <div class="tfy-img">
+                                        <img alt="楚天都市信园" src="https://images.jzhfz.com/old/2020/0202/15806318328607622407.jpg?x-oss-process=style/w_382" />
+                                        <div class="type">
+                                            在售 </div>
+
+                                    </div>
+                                    <div class="tfy-tit">
+                                        <div class="mt">
+                                            <div class="fl">楚天都市信园</div>
+                                            <div class="fr">均价<span>7800</span>元/m²</div>
+                                        </div>
+                                        <div class="mb">
+                                            <div class="fl nowrap">
+                                                <span>品牌地产</span>
+
+                                            </div>
+                                            <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />荆北新区 </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="bd_con">
+                        <ul>
+                            <li class="tfy-item">
+                                <a href="https://www.jzhfz.com/loupan/250.html" target="_blank">
+                                    <div class="tfy-img">
+                                        <img alt="鼎仁公园雅集" src="https://images.jzhfz.com/attachment/build/20200927/019f1f5f4209b034e4f25338d5ea820c1cd53ca7.jpeg?x-oss-process=style/w_382" />
+                                        <div class="type">
+                                            待售 </div>
+
+                                    </div>
+                                    <div class="tfy-tit">
+                                        <div class="mt">
+                                            <div class="fl">鼎仁公园雅集</div>
+                                            <div class="fr"><span>待定</span></div>
+                                        </div>
+                                        <div class="mb">
+                                            <div class="fl nowrap">
+                                                <span>小高层</span>
+                                                <span>高层</span>
+
+                                            </div>
+                                            <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />沙北新区 </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tfy-item">
+                                <a href="https://www.jzhfz.com/loupan/249.html" target="_blank">
+                                    <div class="tfy-img">
+                                        <img alt="城发新时代" src="https://images.jzhfz.com/attachment/build/20200921/fb8dacae9f9c769774c9f794bcd3a8657555dd7b.jpeg?x-oss-process=style/w_382" />
+                                        <div class="type">
+                                            待售 </div>
+
+                                    </div>
+                                    <div class="tfy-tit">
+                                        <div class="mt">
+                                            <div class="fl">城发新时代</div>
+                                            <div class="fr"><span>待定</span></div>
+                                        </div>
+                                        <div class="mb">
+                                            <div class="fl nowrap">
+                                                <span>小高层</span>
+                                                <span>高层</span>
+
+                                            </div>
+                                            <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />沙北新区 </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tfy-item">
+                                <a href="https://www.jzhfz.com/loupan/243.html" target="_blank">
+                                    <div class="tfy-img">
+                                        <img alt="楚天都市信园" src="https://images.jzhfz.com/old/2020/0202/15806318328607622407.jpg?x-oss-process=style/w_382" />
+                                        <div class="type">
+                                            在售 </div>
+
+                                    </div>
+                                    <div class="tfy-tit">
+                                        <div class="mt">
+                                            <div class="fl">楚天都市信园</div>
+                                            <div class="fr">均价<span>7800</span>元/m²</div>
+                                        </div>
+                                        <div class="mb">
+                                            <div class="fl nowrap">
+                                                <span>品牌地产</span>
+
+                                            </div>
+                                            <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />荆北新区 </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tfy-item">
+                                <a href="https://www.jzhfz.com/loupan/247.html" target="_blank">
+                                    <div class="tfy-img">
+                                        <img alt="荆州碧桂园央玺" src="https://images.jzhfz.com/attachment/build/20200724/a02370c9d863b111d0b4aa630f90292424b1368f.jpeg?x-oss-process=style/w_382" />
+                                        <div class="type">
+                                            在售 </div>
+
+                                    </div>
+                                    <div class="tfy-tit">
+                                        <div class="mt">
+                                            <div class="fl">荆州碧桂园央玺</div>
+                                            <div class="fr">均价<span>8650</span>元/m²</div>
+                                        </div>
+                                        <div class="mb">
+                                            <div class="fl nowrap">
+                                                <span>高层</span>
+                                                <span>花园洋房</span>
+
+                                            </div>
+                                            <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />荆北新区 </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tfy-adv">
+    <div class="w">
+        <div class="tfy_adv_info">
+            <div class="tfy_adv_title">
+                <h2>置业顾问</h2>
+                <div class="tfy_adv_info_right">
+                    <div class="tfy_adv_info_refresh" onclick="refreshAdv()">换一批</div>
+                    <div class="adv_join">
+                        <a a href="javascript:void(0)" onclick="handleLogin()"><span class="adv_join_text">置业顾问入驻</span></a>
+                        <span>>></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tfy_adv_con_content clearfix">
+                <div class="tfy_adv_con">
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=256" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/old/2020/0306/15834918654459192073.jpg"
+                                                                                                               alt="陶源"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=256" class="name"><span>陶源</span>
+                                <img class="model_pai" src="../images/index/medal_2.png" alt=""></a>
+                            <div class="lp">保利堂悦</div>
+                            <div class="oper">
+                                <div class="ask" onclick="getUserStatus(1005, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(13997555346,1005,14)" id="chat_13997555346">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=276" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/attachment/information/20200704/8ffa3793289ac5193a07ae4532047b20e89dca68.jpeg"
+                                                                                                               alt="黄志鹏"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=276" class="name"><span>黄志鹏</span><img class="model_pai"
+                                                                                                                        src="../images/index/medal_2.png" alt=""></a>
+                            <div class="lp">金源世纪城</div>
+                            <div class="oper">
+                                <div class="ask" onclick="getUserStatus(1949, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(13545662912,1949,14)" id="chat_13545662912">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=341" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/attachment/config/20200702/e9e9fd90fb8b4b97cc63a4e1b9cb9e244f48a5c2.png"
+                                                                                                               alt="吴凌慧"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=341" class="name"><span>吴凌慧</span><img class="model_pai"
+                                                                                                                        src="../images/index/medal_2.png" alt=""></a>
+                            <div class="lp">海伦堡玖悦府</div>
+                            <div class="oper">
+                                <div class="ask" onclick="getUserStatus(2343, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(18872498671,2343,14)" id="chat_18872498671">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=257" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/old/2020/0306/15834919456601713637.jpg"
+                                                                                                               alt="熊小艳"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=257" class="name"><span>熊小艳</span><img class="model_pai"
+                                                                                                                        src="../images/index/medal_2.png" alt=""></a>
+                            <div class="lp">金源世纪城</div>
+                            <div class="oper">
+                                <div class="ask" onclick="getUserStatus(1762, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(18007214000,1762,14)" id="chat_18007214000">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=261" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/attachment/information/20200605/13247cb28ce092084fd6e75948fb6bf90225fdae.jpeg"
+                                                                                                               alt="吴悠"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=261" class="name"><span>吴悠</span><img class="model_pai"
+                                                                                                                       src="../images/index/medal_2.png" alt=""></a>
+                            <div class="lp">欧亚达阅城</div>
+                            <div class="oper">
+                                <div class="ask" onclick="getUserStatus(1765, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(19986788196,1765,14)" id="chat_19986788196">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=6" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/attachment/information/20200608/c5ed99e8a840042de2b58c507e43e170950d7c7a.jpeg"
+                                                                                                             alt="伍子静"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=6" class="name"><span>伍子静</span><img class="model_pai"
+                                                                                                                      src="../images/index/medal_2.png" alt=""></a>
+                            <div class="lp">景湖悦城</div>
+                            <div class="oper">
+                                <div class="ask" onclick="getUserStatus(1517, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(17683731556,1517,14)" id="chat_17683731556">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tfy_adv_con" style="display:none ">
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=7" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/old/2020/0201/15805431393891104600.jpg"
+                                                                                                             alt="黄超"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=7" class="name"><span>黄超</span><img class="model_pai" src="../images/index/medal_2.png"
+                                                                                                                     alt=""></a>
+                            <div class="lp">景湖悦城</div>
+                            <div class="oper">
+                                <div class="ask" onclick="showChat(1518, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(15027114941,1518,14)" id="chat_15027114941">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=10" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/old/2020/0201/15805430924639111539.jpg"
+                                                                                                              alt="童雪佳"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=10" class="name"><span>童雪佳</span><img class="model_pai"
+                                                                                                                       src="../images/index/medal_3.png" alt=""></a>
+                            <div class="lp">景湖悦城</div>
+                            <div class="oper">
+                                <div class="ask" onclick="showChat(1521, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(18908619701,1521,14)" id="chat_18908619701">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=266" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/attachment/config/20200604/2471555dfb4716b9be62bbcf7108fa5f0ad6de08.png"
+                                                                                                               alt="杨秋蓉"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=266" class="name"><span>杨秋蓉</span><img class="model_pai"
+                                                                                                                        src="../images/index/medal_2.png" alt=""></a>
+                            <div class="lp">武地电建荆韵</div>
+                            <div class="oper">
+                                <div class="ask" onclick="showChat(1879, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(15549012911,1879,14)" id="chat_15549012911">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=267" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/attachment/information/20200604/2e5149ce2c6c10a0362f0701bdc08ba9940d2334.jpeg"
+                                                                                                               alt="王志霞"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=267" class="name"><span>王志霞</span><img class="model_pai"
+                                                                                                                        src="../images/index/medal_3.png" alt=""></a>
+                            <div class="lp">武地电建荆韵</div>
+                            <div class="oper">
+                                <div class="ask" onclick="showChat(1880, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(13508617801,1880,14)" id="chat_13508617801">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=268" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/attachment/information/20200605/f9ea63d50de20ad363247a025ff800b8221dc488.png"
+                                                                                                               alt="周颖"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=268" class="name"><span>周颖</span><img class="model_pai"
+                                                                                                                       src="../images/index/medal_3.png" alt=""></a>
+                            <div class="lp">欧亚达阅城</div>
+                            <div class="oper">
+                                <div class="ask" onclick="showChat(1902, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(13872205443,1902,14)" id="chat_13872205443">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tfy_adv_con_c">
+
+                        <a href="https://www.jzhfz.com/adviser/detail.php?id=269" class="tfy_adv_con_img"><img src="https://images.jzhfz.com/attachment/information/20200607/f5845e3895d9ee99dfee9787a252e141690ab5d4.jpeg"
+                                                                                                               alt="杨梅"></a>
+                        <div class="tfy_adv_con_info">
+                            <a href="https://www.jzhfz.com/adviser/detail.php?id=269" class="name"><span>杨梅</span><img class="model_pai"
+                                                                                                                       src="../images/index/medal_2.png" alt=""></a>
+                            <div class="lp">中建城发荆江之星</div>
+                            <div class="oper">
+                                <div class="ask" onclick="showChat(1933, 9)">咨询</div>
+                                <div class="tel_num" onclick="callObj.showRealTel(17371888394,1933,14)" id="chat_17371888394">电话</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="tfy-tao mt10">
+    <div class="w">
+        <ul>
+            <li>
+                <h2>208383</h2>
+                <p>荆州二手房</p>
+            </li>
+            <li>
+                <h2> 191</h2>
+                <p>荆州新楼盘(个)</p>
+            </li>
+            <li>
+                <h2> 756</h2>
+                <p>荆州小区(个)</p>
+            </li>
+            <li>
+                <h2> 6771</h2>
+                <p>实时挂牌均价(元/㎡)</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--信息栏-->
+<div class="tfy-floor3" id="2sf">
+    <div class="w">
+        <div class="mt">
+            <h3 class="fl"><a href="https://www.jzhfz.com/info/list-1.html" target="_blank">荆州二手房</a></h3>
+            <div class="tfy-r">
+                <a rel="nofollow" href="pubinfo.html" class="tfy-map fr" style="background: url(https://www.jzhfz.com/static/skin/tfy/img/img20.png);">发布房源</a>
+                <div class="tfy-search fr" data-type="ershoufang" data-href="https://www.jzhfz.com/info/list-1.html?keywords">
+                    <input type="text" id="search2s_keyword" placeholder="请输入小区名称" />
+                    <button id="search2s_button">搜索</button>
+                    <script>
+                        $("#search2s_button").click(function (){
+                            var zhi = $("#search2s_keyword").val();
+                            location.href="http://localhost:8080/selhouse/newhouse2?type=2&name2="+zhi;
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+        <span class="clearfix"></span>
+    </div>
+</div>
+<div class="tfy-floor5">
+    <div class="w">
+        <div class="tfy-tx">
+            <ul id="ershou-ul">
+
+                <script>
+                    $.ajax({
+                        url:'/sellhouse/selectAllIndex',
+                        type:'post',
+                        data: {"sid":2},
+                        dataType:'JSON',
+                        success:function(data){
+                            var s1 ='';
+                            var s2 ='';
+                            $.each(data,function (i,d) {
+                                if (i < 4) {
+                                s1 = s1 + ' <li class="tfy-item">\n' +
+                                    '\n' +
+                                    '                    <a href="../xinxi/er?id='+d.house.id+'&type=2" target="_blank">\n' +
+                                    '                        <div class="tfy-img">\n' +
+                                    '                            <img alt="' + d.house.title + '" src="../images/houseimg/'+d.house.indoorImg.split(',')[0]+'" />\n' +
+                                    '                        </div>\n' +
+                                    '                        <div class="tfy-tit">\n' +
+                                    '                            <div class="mt">\n' +
+                                    '                                <div class="fl nowrap">' + d.house.title + '<img src="https://www.jzhfz.com/static/skin/tfy/img/img21.png" />\n' +
+                                    '                                </div>\n' +
+                                    '                                <div class="fr"><span>' + d.house.price + '万</span></div>\n' +
+                                    '                            </div>\n' +
+                                    '                            <div class="mb">\n' +
+                                    '                                <div class="fl">\n' +
+                                    '                                    <span>' + d.house.room + '室' + d.house.hall + '厅' + d.house.defend + '卫</span><span>' + d.house.houseSize + '㎡</span><span>' + d.house.houseType.name + '多层住宅</span>\n' +
+                                    '                                </div>\n' +
+                                    '                                <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />荆州区</div>\n' +
+                                    '                            </div>\n' +
+                                    '                        </div>\n' +
+                                    '                    </a>\n' +
+                                    '                </li>';
+                                }else {
+                                    s2 = s2 +'<li>\n' +
+                                        '\t\t\t\t\t\t\t<span class="d1">\n' +
+                                        '\t\t\t\t\t\t\t\t'+d.house.area.name+' </span>\n' +
+                                        '                    <span class="a1">\n' +
+                                        '\t\t\t\t\t\t\t\t<a href="../xinxi/er?id='+d.house.id+'&type=2" target="_blank" class="blue biaoti" style="">\n' +
+                                        '\t\t\t\t\t\t\t\t\t'+d.house.area.name+d.house.title+' </a>\n' +
+                                        '\n' +
+                                        '\t\t\t\t\t\t\t\t<span class="gray cat">\n' +
+                                        '\t\t\t\t\t\t\t\t\t[中介]\n' +
+                                        '\t\t\t\t\t\t\t\t</span>\n' +
+                                        '\n' +
+                                        '\t\t\t\t\t\t\t\t<s class="tu">图</s>\n' +
+                                        '\t\t\t\t\t\t\t</span>\n' +
+                                        '                    <span class="b1">'+d.house.room+'室'+d.house.hall+'厅'+d.house.defend+'卫</span>\n' +
+                                        '                    <span class="b1">'+d.house.houseSize+'㎡</span>\n' +
+                                        '                    <span class="c1"><em>'+d.house.price+'万元</em></span>\n' +
+                                        '                    <span class="c1">'+d.house.houseType.name+'</span>\n' +
+                                        '                    <span class="t1">'+getMyDate(d.beginTime)+'</span>\n' +
+                                        '                </li>';
+                                }
+                            })
+                            $("#ershou-ul").html(s1);
+                            $("#hd-ul").html(s2);
+                        }
+                    })
+
+
+
+                    //获得年月日      得到日期oTime
+                    function getMyDate(str){
+                        var oDate = new Date(str),
+                            oYear = oDate.getFullYear(),
+                            oMonth = oDate.getMonth()+1,
+                            oDay = oDate.getDate(),
+                            oHour = oDate.getHours(),
+                            oMin = oDate.getMinutes(),
+                            oSen = oDate.getSeconds(),
+                            oTime =  getzf(oMonth) +'-'+ getzf(oDay) ;//最后拼接时间
+                        return oTime;
+                    };
+                    //补0操作
+                    function getzf(num){
+                        if(parseInt(num) < 10){
+                            num = '0'+num;
+                        }
+                        return num;
+                    }
+                </script>
+            </ul>
+        </div>
+
+
+        <div class="tfy-r fr">
+            <div class="slide6">
+                <div class="hd">
+                    <ul>
+                        <li class="active">推荐</li>
+
+                        <li><a rel="nofollow" target="_blank" href="https://www.jzhfz.com/info/list-1.html?isvideo=video">有电梯</a></li>
+                        <li><a rel="nofollow" target="_blank" href="https://www.jzhfz.com/info/list-1.html?info_level=2">小户型</a></li>
+                        <li><a rel="nofollow" target="_blank" href="https://www.jzhfz.com/info/list-1.html?zhongjie=1">低首付</a></li>
+                        <li><a rel="nofollow" target="_blank" href="https://www.jzhfz.com/info/list-1.html?zhongjie=2">满五唯一</a></li>
+                        <li><a target="_blank" href="https://www.jzhfz.com/info/list-4.html">精装</a></li>
+                        <li><a target="_blank" href="/selhouse/newhouse2?type=1">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_list">
+            <ul id="hd-ul">
+
+                <li>
+							<span class="d1">
+								武德片区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/218927.html" target="_blank" class="blue biaoti" style="">
+									(武德片区)香格里拉海韵3室2厅2卫123m²精装修 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅2卫</span>
+                    <span class="b1">123㎡</span>
+                    <span class="c1"><em>99万元</em></span>
+                    <span class="c1">小高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								沙市区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/218945.html" target="_blank" class="blue biaoti" style="">
+									红星路小学附近水瓶厂宿舍精装两房出售 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室1厅1卫</span>
+                    <span class="b1">57㎡</span>
+                    <span class="c1"><em>39万元</em></span>
+                    <span class="c1">多层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219898.html" target="_blank" class="blue biaoti" style="">
+									五一路《学仕世家小区》3楼精装三房便宜出售 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅2卫</span>
+                    <span class="b1">109㎡</span>
+                    <span class="c1"><em>68万元</em></span>
+                    <span class="c1">多层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								古城片区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219447.html" target="_blank" class="blue biaoti" style="">
+									荆州空气很好的地方《长久天地小》价格超便宜电梯三房出售 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅2卫</span>
+                    <span class="b1">130㎡</span>
+                    <span class="c1"><em>65万元</em></span>
+                    <span class="c1">小高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219816.html" target="_blank" class="blue biaoti" style="">
+									沙市区《外滩阳光小区》精装电梯房便宜出售 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室2厅1卫</span>
+                    <span class="b1">91㎡</span>
+                    <span class="c1"><em>75万元</em></span>
+                    <span class="c1">高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								荆北新区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219590.html" target="_blank" class="blue biaoti" style="">
+									稀缺好房(荆北新区)绿地之窗3室2厅2卫带家具家电精装房出售 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅2卫</span>
+                    <span class="b1">130㎡</span>
+                    <span class="c1"><em>125万元</em></span>
+                    <span class="c1">高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219591.html" target="_blank" class="blue biaoti" style="">
+									(中心城区)天阳小区 2室2厅1卫80m²简单装修 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室2厅1卫</span>
+                    <span class="b1">80㎡</span>
+                    <span class="c1"><em>45万元</em></span>
+                    <span class="c1">多层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								武德片区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219879.html" target="_blank" class="blue biaoti" style="">
+									太岳路《人信城小区》带部分家具家电精装大三房出价就卖 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅2卫</span>
+                    <span class="b1">122㎡</span>
+                    <span class="c1"><em>102万元</em></span>
+                    <span class="c1">小高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219877.html" target="_blank" class="blue biaoti" style="">
+									廖子河路《金江宝坻小区》带家具家电精装两房便宜出售 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室2厅1卫</span>
+                    <span class="b1">88㎡</span>
+                    <span class="c1"><em>79万元</em></span>
+                    <span class="c1">小高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								城东片区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219873.html" target="_blank" class="blue biaoti" style="">
+									近沙北玉桥开发区《中豪明珠城》带家电家具精装三房便宜出售 </a>
+
+								<span class="gray cat">
+									[中介]
+								</span>
+
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅2卫</span>
+                    <span class="b1">117㎡</span>
+                    <span class="c1"><em>95万元</em></span>
+                    <span class="c1">小高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="mainNewsScroll">
+            <h4><a href="https://www.jzhfz.com/xiaoqu.php" target="_blank">小区房价：</a></h4>
+            <div class="mainNewsScroll-list">
+                <ul>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=177" target="_blank">景汇园<span>均价7001元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=163" target="_blank">南城故事<span>均价9200元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=236" target="_blank">凤台坊小区<span>均价5474元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=87" target="_blank">壹品漫城<span>均价7959元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=4" target="_blank">荆织小区<span>均价5329元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=18" target="_blank">兴盛小区<span>均价4202元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=225" target="_blank">日月星国际华侨城<span>均价8710元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=184" target="_blank">联投国际城丨璞悦湾<span>均价7059元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=60" target="_blank">锦华园<span>均价6667元/平米</span></a>
+                    <li>
+                    <li><a href="https://www.jzhfz.com/xiaoqu.php?id=117" target="_blank">金色华庭<span>均价3841元/平米</span></a>
+                    <li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<span class="clearfix"></span>
+
+<span class="clearfix"></span>
+<!--信息栏-->
+<div class="tfy-floor3" id="zf">
+    <div class="w">
+        <div class="mt">
+            <h3 class="fl"><a rel="nofollow" href="https://www.jzhfz.com/info/list-2.html" target="_blank">荆州租房</a></h3>
+            <div class="tfy-r">
+                <a href="pubinfo.html" class="tfy-map fr" style="background: url(https://www.jzhfz.com/static/skin/tfy/img/img20.png);">发布房源</a>
+                <div class="tfy-search fr" data-type="zufang" data-href="https://www.jzhfz.com/info/list-2.html?keywords">
+                    <input id="searchsz_keyword" type="text" placeholder="请输入小区名称" />
+                    <button id="searchsz_button">搜索</button>
+                    <script>
+                        $("#searchsz_button").click(function (){
+                            var zhi = $("#searchsz_keyword").val();
+                            location.href="http://localhost:8080/selhouse/newhouse2?type=3&name2="+zhi;
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+        <span class="clearfix"></span>
+    </div>
+</div>
+<div class="tfy-floor6">
+    <div class="w">
+        <div class="tfy-tx">
+            <ul id="Zufang-ul">
+                <script>
+                    var s1 ='';
+                    var s2 ='';
+                    $.ajax({
+                        url:'/sellhouse/selectAllIndex',
+                        type:'post',
+                        data:{"sid":3},
+                        dataType:'JSON',
+                        success:function(data){
+                            $.each(data,function (i,d) {
+                                if (i < 4) {
+                                    s1 = s1 + ' <li class="tfy-item">\n' +
+                                        '\n' +
+                                        '                    <a href="../xinxi/er?id='+d.house.id+'&type=3" target="_blank">\n' +
+                                        '                        <div class="tfy-img">\n' +
+                                        '                            <img alt="' + d.house.title + '" src="../images/houseimg/'+d.house.indoorImg.split(',')[0]+'" />\n' +
+                                        '                        </div>\n' +
+                                        '                        <div class="tfy-tit">\n' +
+                                        '                            <div class="mt">\n' +
+                                        '                                <div class="fl nowrap">' + d.house.title + '<img src="https://www.jzhfz.com/static/skin/tfy/img/img21.png" />\n' +
+                                        '                                </div>\n' +
+                                        '                                <div class="fr"><span>' + d.house.price + '万</span></div>\n' +
+                                        '                            </div>\n' +
+                                        '                            <div class="mb">\n' +
+                                        '                                <div class="fl">\n' +
+                                        '                                    <span>' + d.house.room + '室' + d.house.hall + '厅' + d.house.defend + '卫</span><span>' + d.house.houseSize + '㎡</span><span>' + d.house.houseType.name + '多层住宅</span>\n' +
+                                        '                                </div>\n' +
+                                        '                                <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />荆州区</div>\n' +
+                                        '                            </div>\n' +
+                                        '                        </div>\n' +
+                                        '                    </a>\n' +
+                                        '                </li>';
+                                }else {
+                                    s2 = s2 +'<li>\n' +
+                                        '\t\t\t\t\t\t\t<span class="d1">\n' +
+                                        '\t\t\t\t\t\t\t\t'+d.house.area.name+' </span>\n' +
+                                        '                    <span class="a1">\n' +
+                                        '\t\t\t\t\t\t\t\t<a href="../xinxi/er?id='+d.house.id+'&type=3" target="_blank" class="blue biaoti" style="">\n' +
+                                        '\t\t\t\t\t\t\t\t\t'+d.house.area.name+d.house.title+' </a>\n' +
+                                        '\n' +
+                                        '\t\t\t\t\t\t\t\t<span class="gray cat">\n' +
+                                        '\t\t\t\t\t\t\t\t\t[中介]\n' +
+                                        '\t\t\t\t\t\t\t\t</span>\n' +
+                                        '\n' +
+                                        '\t\t\t\t\t\t\t\t<s class="tu">图</s>\n' +
+                                        '\t\t\t\t\t\t\t</span>\n' +
+                                        '                    <span class="b1">'+d.house.room+'室'+d.house.hall+'厅'+d.house.defend+'卫</span>\n' +
+                                        '                    <span class="b1">'+d.house.houseSize+'㎡</span>\n' +
+                                        '                    <span class="c1"><em>'+d.house.price+'万元</em></span>\n' +
+                                        '                    <span class="c1">'+d.house.houseType.name+'</span>\n' +
+                                        '                    <span class="t1">'+getMyDate(d.beginTime)+'</span>\n' +
+                                        '                </li>';
+                                }
+                            })
+                            $("#Zufang-ul").html(s1);
+                            $("#main-list-ul").html(s2);
+                        }
+                    })
+
+
+
+                    //获得年月日      得到日期oTime
+                    function getMyDate(str){
+                        var oDate = new Date(str),
+                            oYear = oDate.getFullYear(),
+                            oMonth = oDate.getMonth()+1,
+                            oDay = oDate.getDate(),
+                            oHour = oDate.getHours(),
+                            oMin = oDate.getMinutes(),
+                            oSen = oDate.getSeconds(),
+                            oTime =  getzf(oMonth) +'-'+ getzf(oDay) ;//最后拼接时间
+                        return oTime;
+                    };
+                    //补0操作
+                    function getzf(num){
+                        if(parseInt(num) < 10){
+                            num = '0'+num;
+                        }
+                        return num;
+                    }
+                </script>
+
+<!--
+                <li class="tfy-item">
+                    <a href="info/219911.html" target="_blank">
+                        <div class="tfy-img">
+                            <img alt="便河广场附近外滩阳光小区精装大三房两厅出租" src="https://images.jzhfz.com/attachment/information/20210310/03e2f77046a3f56b4f3fac2a3d8d696aa8822200.jpeg?x-oss-process=style/w_320" />
+                        </div>
+                        <div class="tfy-tit">
+                            <div class="mt">
+                                <div class="fl nowrap">便河广场附近外滩阳光小区精装大三房两厅出租<img src="https://www.jzhfz.com/static/skin/tfy/img/img21.png" />
+                                </div>
+                                <div class="fr"><span>3000元/月</span></div>
+                            </div>
+                            <div class="mb">
+                                <div class="fl">
+                                    <span>3室2厅2卫</span><span>140㎡</span><span>小高层住宅</span>
+                                </div>
+                                <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />中心城区</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="tfy-item">
+                    <a href="info/219910.html" target="_blank">
+                        <div class="tfy-img">
+                            <img alt="荆州古城新北门附近2楼带全套家具家电精装三房便宜出租" src="https://images.jzhfz.com/attachment/information/20210310/97162fc621b7fb1845332497cb67021ee785d162.jpeg?x-oss-process=style/w_320" />
+                        </div>
+                        <div class="tfy-tit">
+                            <div class="mt">
+                                <div class="fl nowrap">荆州古城新北门附近2楼带全套家具家电精装三房便宜出租<img src="https://www.jzhfz.com/static/skin/tfy/img/img21.png" />
+                                </div>
+                                <div class="fr"><span>1500元/月</span></div>
+                            </div>
+                            <div class="mb">
+                                <div class="fl">
+                                    <span>3室2厅1卫</span><span>105㎡</span><span>多层住宅</span>
+                                </div>
+                                <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />古城片区</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="tfy-item">
+                    <a href="info/219909.html" target="_blank">
+                        <div class="tfy-img">
+                            <img alt="北京路人信汇旁带全套家具家电精装两房便宜出租" src="https://images.jzhfz.com/attachment/information/20210310/a7b8431fb8a1db59989beded274001a0e0fa0e4a.jpeg?x-oss-process=style/w_320" />
+                        </div>
+                        <div class="tfy-tit">
+                            <div class="mt">
+                                <div class="fl nowrap">北京路人信汇旁带全套家具家电精装两房便宜出租<img src="https://www.jzhfz.com/static/skin/tfy/img/img21.png" />
+                                </div>
+                                <div class="fr"><span>1300元/月</span></div>
+                            </div>
+                            <div class="mb">
+                                <div class="fl">
+                                    <span>2室2厅1卫</span><span>70㎡</span><span>多层住宅</span>
+                                </div>
+                                <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />中心城区</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="tfy-item">
+                    <a href="info/219875.html" target="_blank">
+                        <div class="tfy-img">
+                            <img alt="红门路中商百货后《女人城公寓》带全套家具家电出租" src="https://images.jzhfz.com/attachment/information/20210225/70646ebd670a6214474017017b64935c22c16647.jpeg?x-oss-process=style/w_320" />
+                        </div>
+                        <div class="tfy-tit">
+                            <div class="mt">
+                                <div class="fl nowrap">红门路中商百货后《女人城公寓》带全套家具家电出租<img src="https://www.jzhfz.com/static/skin/tfy/img/img21.png" />
+                                </div>
+                                <div class="fr"><span>1200元/月</span></div>
+                            </div>
+                            <div class="mb">
+                                <div class="fl">
+                                    <span>1室1厅1卫</span><span>50㎡</span><span>小高层住宅</span>
+                                </div>
+                                <div class="fr"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon8.png" />中心城区</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>-->
+
+            </ul>
+        </div>
+
+        <div class="tfy-r fr">
+            <div class="slide6">
+                <div class="hd">
+                    <ul>
+                        <li class="active">推荐</li>
+                        <li><a target="_blank" href="https://www.jzhfz.com/info/list-5.html">多层</a></li>
+                        <li><a target="_blank" href="https://www.jzhfz.com/info/list-6.html">环境优美</a></li>
+                        <li><a target="_blank" href="https://www.jzhfz.com/info/list-8.html">交通便利</a></li>
+                        <li><a target="_blank" href="https://www.jzhfz.com/info/list-10.html">押一付一</a></li>
+                        <li><a target="_blank" href="https://www.jzhfz.com/info/list-3.html">宜居宜商</a></li>
+                        <li><a target="_blank" href="/selhouse/newhouse2?type=2">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main_list">
+            <ul id="main-list-ul">
+
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219823.html" target="_blank" class="blue biaoti" style="">
+									沙市四中附近带全套家具家电两房便宜出租 </a>
+
+
+								<span class="gray cat">
+									[中介]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室1厅1卫</span>
+                    <span class="b1">72㎡</span>
+                    <span class="c1"><em>800元/月</em></span>
+                    <span class="c1">高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219820.html" target="_blank" class="blue biaoti" style="">
+									沙市人信汇旁《凤台坊小区》带家具家电精装两房便宜出租 </a>
+
+
+								<span class="gray cat">
+									[中介]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室2厅1卫</span>
+                    <span class="b1">65㎡</span>
+                    <span class="c1"><em>1200元/月</em></span>
+                    <span class="c1">多层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219870.html" target="_blank" class="blue biaoti" style="">
+									便河广场时尚豪庭小区精装3房办公出租 </a>
+
+
+								<span class="gray cat">
+									[中介]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅2卫</span>
+                    <span class="b1">128㎡</span>
+                    <span class="c1"><em>3500元/月</em></span>
+                    <span class="c1">小高层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219876.html" target="_blank" class="blue biaoti" style="">
+									解放路四中对面一室一厅一厨一卫带家具家电便宜出租 </a>
+
+
+								<span class="gray cat">
+									[中介]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">1室1厅1卫</span>
+                    <span class="b1">50㎡</span>
+                    <span class="c1"><em>700元/月</em></span>
+                    <span class="c1">多层住宅</span>
+                    <span class="t1">03-14</span>
+                </li>
+                <li>
+							<span class="d1">
+								沙市区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219872.html" target="_blank" class="blue biaoti" style="">
+									(城东片区)富润·沙市花园4室2厅2卫126m² </a>
+
+
+								<span class="gray cat">
+									[个人]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">4室2厅2卫</span>
+                    <span class="b1">126㎡</span>
+                    <span class="c1"><em>2200元/月</em></span>
+                    <span class="c1">高层住宅</span>
+                    <span class="t1">03-08</span>
+                </li>
+                <li>
+							<span class="d1">
+								古城片区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219897.html" target="_blank" class="blue biaoti" style="">
+									2室1厅1卫70m²简单装修 </a>
+
+
+								<span class="gray cat">
+									[个人]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室1厅1卫</span>
+                    <span class="b1">70㎡</span>
+                    <span class="c1"><em>800元/月</em></span>
+                    <span class="c1">多层住宅</span>
+                    <span class="t1">03-07</span>
+                </li>
+                <li>
+							<span class="d1">
+								沙北新区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219890.html" target="_blank" class="blue biaoti" style="">
+									(沙北新区)110万方楚天都市生活圈诚园2室2厅1卫 </a>
+
+
+								<span class="gray cat">
+									[个人]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室2厅1卫</span>
+                    <span class="b1">70㎡</span>
+                    <span class="c1"><em>160元/月</em></span>
+                    <span class="c1">多层住宅</span>
+                    <span class="t1">02-28</span>
+                </li>
+                <li>
+							<span class="d1">
+								沙北新区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219889.html" target="_blank" class="blue biaoti" style="">
+									(沙北新区)奥园学府里3室2厅1卫 </a>
+
+
+								<span class="gray cat">
+									[个人]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅1卫</span>
+                    <span class="b1">90㎡</span>
+                    <span class="c1"><em>2300元/月</em></span>
+                    <span class="c1">高层住宅</span>
+                    <span class="t1">02-28</span>
+                </li>
+                <li>
+							<span class="d1">
+								沙市区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219887.html" target="_blank" class="blue biaoti" style="">
+									2室2厅1卫63m²简单装修 </a>
+
+
+								<span class="gray cat">
+									[个人]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">2室2厅1卫</span>
+                    <span class="b1">63㎡</span>
+                    <span class="c1"><em>1000元/月</em></span>
+                    <span class="c1">多层住宅</span>
+                    <span class="t1">02-27</span>
+                </li>
+                <li>
+							<span class="d1">
+								中心城区 </span>
+                    <span class="a1">
+								<a href="https://www.jzhfz.com/info/219884.html" target="_blank" class="blue biaoti" style="">
+									(中心城区)恒信春秋府3室2厅1卫 </a>
+
+
+								<span class="gray cat">
+									[个人]
+								</span>
+								<s class="tu">图</s>
+							</span>
+                    <span class="b1">3室2厅1卫</span>
+                    <span class="b1">94㎡</span>
+                    <span class="c1"><em>2300元/月</em></span>
+                    <span class="c1">高层住宅</span>
+                    <span class="t1">02-27</span>
+                </li>
+
+            </ul>
+        </div>
+
+        <span class="clearfix"></span>
+    </div>
+</div>
+<!-- 社区暂时隐藏-->
+
+<div id="ad_footerbanner"></div>
+<div class="tfy-tui">
+    <div class="w">
+        <div class="box">
+            <h2>热门房地产排行</h2>
+            <p>Real Estate Ranking</p>
+        </div>
+    </div>
+</div>
+<div class="tfy-floor9">
+    <div class="w" style="overflow: hidden;">
+        <div class="slide11 address">
+            <div class="hd">
+                <ul>
+                    <li>新楼盘</li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li>
+                        <dl class="l">
+                            <dd><span class="red">1</span><a href="https://www.jzhfz.com/loupan/85.html" target="_blank" class="nowrap">和邦中央半岛</a><i
+                                    class="nowrap">江陵县</i></dd>
+                            <dd><span class="red">2</span><a href="https://www.jzhfz.com/loupan/107.html" target="_blank" class="nowrap">荆州卓尔城</a><i
+                                    class="nowrap">荆州高新区</i></dd>
+                            <dd><span class="red">3</span><a href="https://www.jzhfz.com/loupan/243.html" target="_blank" class="nowrap">楚天都市信园</a><i
+                                    class="nowrap">荆北新区</i></dd>
+                            <dd><span class="red">4</span><a href="https://www.jzhfz.com/loupan/102.html" target="_blank" class="nowrap">百盟光彩商贸城</a><i
+                                    class="nowrap">荆北新区</i></dd>
+                            <dd><span class="red">5</span><a href="https://www.jzhfz.com/loupan/136.html" target="_blank" class="nowrap">龙城怡景园</a><i
+                                    class="nowrap">古城片区</i></dd>
+                            <dd><span class="red">6</span><a href="https://www.jzhfz.com/loupan/226.html" target="_blank" class="nowrap">朝阳华庭</a><i
+                                    class="nowrap">中心城区</i></dd>
+                            <dd><span class="red">7</span><a href="https://www.jzhfz.com/loupan/257.html" target="_blank" class="nowrap">两湖绿谷小镇</a><i
+                                    class="nowrap">荆州高新区</i></dd>
+                            <dd><span class="red">8</span><a href="https://www.jzhfz.com/loupan/248.html" target="_blank" class="nowrap">楚天都市润园</a><i
+                                    class="nowrap">城东片区</i></dd>
+                            <dd><span class="red">9</span><a href="https://www.jzhfz.com/loupan/249.html" target="_blank" class="nowrap">城发新时代</a><i
+                                    class="nowrap">沙北新区</i></dd>
+                            <dd><span class="red">10</span><a href="https://www.jzhfz.com/loupan/251.html" target="_blank" class="nowrap">荆州恒大云湖上苑</a><i
+                                    class="nowrap">纪南文旅区</i></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide11">
+            <div class="hd">
+                <ul>
+                    <li>最近更新</li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li>
+                        <dl>
+                            <dd><span class="red">1</span><a href="https://www.jzhfz.com/news/44866.html" class="nowrap">业主投诉 |荆州文旅区纪南新城小区
+                                买房7年未办证</a></dd>
+                            <dd><span class="red">2</span><a href="https://www.jzhfz.com/news/44865.html" class="nowrap">荆州副市长黄镇督办荆州区水环境整治工作</a></dd>
+                            <dd><span class="red">3</span><a href="https://www.jzhfz.com/news/44864.html" class="nowrap">狂欢升级｜鼎仁·公园雅集
+                                奢侈品全城送 燃动沙北！</a></dd>
+                            <dd><span class="red">4</span><a href="https://www.jzhfz.com/news/44863.html" class="nowrap">绿地荆州城际空间站
+                                三月焕新季丨暖春买铺 钜惠N重礼</a></dd>
+                            <dd><span class="red">5</span><a href="https://www.jzhfz.com/news/44862.html" class="nowrap">荆州市长带队拜访华强方特集团、广东长隆集团和恒大童世界集团</a></dd>
+                            <dd><span class="red">6</span><a href="https://www.jzhfz.com/news/44861.html" class="nowrap">武德片区学区大升级
+                                实地探访荆州张居正小学改扩建</a></dd>
+                            <dd><span class="red">7</span><a href="https://www.jzhfz.com/news/44860.html" class="nowrap">中农联与美团优选达成深度合作！强强联手共襄“三农”伟业</a></dd>
+                            <dd><span class="red">8</span><a href="https://www.jzhfz.com/news/44859.html" class="nowrap">业主投诉
+                                |城南新丝园小区12年未办房产证</a></dd>
+                            <dd><span class="red">9</span><a href="https://www.jzhfz.com/news/44858.html" class="nowrap">荆州市五年完成普通公路建设投资232亿元
+                                新增全省第二</a></dd>
+                            <dd><span class="red">10</span><a href="https://www.jzhfz.com/news/44857.html" class="nowrap">鼎仁·公园雅集1314“墙”式示爱
+                                十万鲜花吸引全城围观！</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide11">
+            <div class="hd">
+                <ul>
+                    <li>一周资讯排行</li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li>
+                        <dl>
+                            <dd><span class="red'">1</span><a href="https://www.jzhfz.com/news/44865.html" class="nowrap">荆州副市长黄镇督办荆州区水环境整治工作</a></dd>
+                            <dd><span class="red'">2</span><a href="https://www.jzhfz.com/news/44851.html" class="nowrap">碧波公寓等4个小区
+                                成荆州首批老旧住宅楼加装电梯项目</a></dd>
+                            <dd><span class="red'">3</span><a href="https://www.jzhfz.com/news/44832.html" class="nowrap">业主投诉
+                                |北港安置房什么时候能办房产证</a></dd>
+                            <dd><span class="red'">4</span><a href="https://www.jzhfz.com/news/44839.html" class="nowrap">杨泗村沙北新区征迁交地清零工作正在进行</a></dd>
+                            <dd><span class="red'">5</span><a href="https://www.jzhfz.com/news/44840.html" class="nowrap">业主咨询 |江津西路北湖小区
+                                何时引进共享电梯？</a></dd>
+                            <dd><span class="red'">6</span><a href="https://www.jzhfz.com/news/44857.html" class="nowrap">鼎仁·公园雅集1314“墙”式示爱
+                                十万鲜花吸引全城围观！</a></dd>
+                            <dd><span class="red'">7</span><a href="https://www.jzhfz.com/news/44830.html" class="nowrap">鼎仁公园雅集|风靡荆州10万人的爆款
+                                竟是...这朵花？</a></dd>
+                            <dd><span class="red'">8</span><a href="https://www.jzhfz.com/news/44858.html" class="nowrap">荆州市五年完成普通公路建设投资232亿元
+                                新增全省第二</a></dd>
+                            <dd><span class="red'">9</span><a href="https://www.jzhfz.com/news/44861.html" class="nowrap">武德片区学区大升级
+                                实地探访荆州张居正小学改扩建</a></dd>
+                            <dd><span class="red'">10</span><a href="https://www.jzhfz.com/news/44836.html" class="nowrap">首秀完美
+                                “大唐不夜城不倒翁小姐姐”轰动荆州~</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--信息栏-->
+
+<div class="tfy-link">
+    <div class="w">
+        <div class="slide8">
+            <div class="hd">
+                <ul>
+                    <li class="on">友情链接 </li>
+                </ul>
+                <span><em>媒体合作</em>haofz6666</span>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li><a href="https://www.szfcol.com" target="_blank">随州房产网</a></li>
+                    <li><a href="https://fang.ph66.com" target="_blank">平湖房产网</a></li>
+                    <li><a href="https://www.0356f.com" target="_blank">晋城房产网</a></li>
+                    <li><a href="https://www.mytaofang.com" target="_blank">绵阳楼盘</a></li>
+                    <li><a href="http://www.373f.com/ " target="_blank">新乡房产网</a></li>
+                    <li><a href="https://www.xyfcw.com/" target="_blank">信阳房产网</a></li>
+                    <li><a href="http://www.zcfcw.com" target="_blank">邹城房产网</a></li>
+                    <li><a href="https://www.lyfcw.com/" target="_blank">洛阳房产网</a></li>
+                    <li><a href="https://www.jzhfz.com/news/jingzhoufangjia" target="_blank">荆州房价</a></li>
+                    <li><a href="http://www.lsfc.net.cn/" target="_blank">乐山房产网</a></li>
+                    <li><a href="http://www.sgfcw.com/" target="_blank">寿光房产网</a></li>
+                    <li><a href="http://www.nfxx.cn/" target="_blank">南充房产网</a></li>
+                    <li><a href="http://www.zgfcn.com/" target="_blank">自贡房产网</a></li>
+                    <li><a href="http://www.fdc99.com/" target="_blank">永州房地产信息网</a></li>
+                    <li><a href="https://linyi.focus.cn/" target="_blank">临沂房产网</a></li>
+                    <li><a href="http://www.0915home.com/" target="_blank">安康房产网</a></li>
+                    <li><a href="http://www.zcfun.com/" target="_blank">诸城房产网</a></li>
+                    <li><a href="http://www.jzcool.com/" target="_blank">荆州在线</a></li>
+                    <li><a href="https://hf.zhuangyi.com" target="_blank">合肥装修网</a></li>
+                    <li><a href="http://house.zjk169.net/" target="_blank">张家口房价</a></li>
+                    <li><a href="https://www.596fc.com/" target="_blank">漳州房产网</a></li>
+                    <li><a href="http://www.fc0633.com" target="_blank">日照置业网</a></li>
+                    <li><a href="https://www.0572home.com/" target="_blank">德清房产网</a></li>
+                    <li><a href="http://www.880735.com/" target="_blank">永兴房产网</a></li>
+                    <li><a href="https://www.sqfcw.com" target="_blank">宿迁房产网</a></li>
+                    <li><a href="https://www.xafc.com/" target="_blank">合肥房产网</a></li>
+                    <li><a href="https://www.0851fcw.com/" target="_blank">贵阳房产</a></li>
+                    <li><a href="https://www.msanjia.com/" target="_blank">眉山安家网</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var hotBuildCount = 0;
+    hotBuildCount = 1;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="footer"></div><!-- 底部导入 -->
+
+<script type="text/javascript">
+    $(function() {
+        $("#head").load("../publichtml/public_pageHead.html");
+        $("#footer").load("../publichtml/pub_footer.html");
+        $("#index-login-daohang-dr").load("../publichtml/navigation.html");
+        $("#floatMul").load("../publichtml/floatMune.html");
+    })
+</script>
+<!-- 导航栏js导入 -->
+<!-- <script src="js/navigation.js"></script> -->
+</body>
+</html>

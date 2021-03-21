@@ -1,0 +1,10 @@
+*{margin: 0px;padding: 0px;}
+#floatMul{list-style: none;position: fixed;right: 0px;top:50%;transform: translateY(-50%);}
+#floatMul li{width: 60px;height: 50px;background-color: #6478a6;margin: 5px 0px;padding-top: 10px;border-radius: 2px;cursor: pointer;}
+#floatMul li p{font-weight: 200;text-align: center;color: #FFFFFF;}
+#floatMul li:hover{background-color: #FF5C00;}
+#floatMul li:hover .z{display: block;}
+#floatMul .s{font-size: 20px;}
+#floatMul .FF5C00{background-color: #FF5C00;}
+#floatMul .z{display: none;position: absolute;top:120px;left: -175px;background-color: #fff;text-align: center;padding: 10px 10px;border-radius: 2px;border: 1px solid #CCCCCC;}
+#floatMul .z dd{margin: 6px 0px;}

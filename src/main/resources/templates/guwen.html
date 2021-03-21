@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>荆州置顶顾问</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/floatmuen.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_head.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_footer.css"/>
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/guwen.css">
+    <style>
+        .layui-table-cell{
+            height:80px;line-height:80px;!important;
+        }
+    </style>
+</head>
+<body>
+<ul id="floatMul"></ul>
+<div id="head"></div>
+<div id="navigation"></div>
+
+<div class="demoTable">
+    <div id="gid">
+        <h1 class="cu">荆州置业顾问排行榜</h1><br />
+        <div class="layui-inline">
+            <input class="ayui-input xiala" placeholder="请输入置业顾问姓名" id="xxm"/>
+        </div>
+        <button class="layui-btn sou" type=" button" data-type="reload">搜索</button><br>
+        <button type=" button" class="sq" >申请入驻</button>
+    </div>
+</div>
+<div style="text-align: center;">
+    <div class="layui-inline">
+        <table id="demo" lay-filter="test" ></table>
+    </div>
+</div>
+
+<div id="footer"></div>
+<script>
+    $(function(){
+        $("#floatMul").load("../publichtml/floatMune.html");
+        $("#head").load("../publichtml/public_pageHead.html");
+        $("#footer").load("../publichtml/pub_footer.html");
+        $("#navigation").load("../publichtml/navigation.html",function(){
+            $("#nologo>li").removeClass("active").eq(4).addClass("active");
+        });
+    });
+</script>
+<script src="../layui/layui.js"></script>
+<script>
+    layui.use('table', function() {
+        var table = layui.table;
+        //第一个实例
+        table.render({
+            id: "testReload",
+            elem: '#demo',
+            height: 1050,
+            width: 1400,
+            skin: 'nob',
+            url: '/Adviser/findAll', //数据接口
+            page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                layout: ['prev', 'page', 'next'], //自定义分页布局
+                groups: 3, //只显示 3 个连续页码
+                first: '首页', //首页
+                prev: '上一页',
+                next: '下一页',
+                limit: 10,
+                last: '尾页', //尾页
+                curr: 1, //第几页，默认值是1
+            },
+            cols: [ [
+                {
+                    field: 'ranking',
+                    title: '名次',
+                    width: '10%',
+                    align: 'center'
+
+                }
+                , {
+                    title: '置业顾问',
+                    width: '15%',
+                    align: 'center',
+                    templet:function (b){
+                        return '<img  style="border-radius: 50px;height: 50px;width: 50px" ' +
+                               'src="../images/gwimg/'+b.consultanPortrait+'"/>'+
+                               '<span style="padding-left: 20px;">'+b.consultantName+'</span>';
+                    }
+                }
+                , {
+                    title: '入驻楼盘',
+                    width: '15%',
+                    align: 'center',
+                    templet:function(b){
+                        return b.properties.name;
+                    }
+                }
+                , {
+                    title: '等级',
+                    width: '15%',
+                    align: 'center',
+                    templet:function(b){
+                        return '<span style="color: #FF5C6A;border: 1px solid #FF5C6A;' +
+                               'padding: 5px;border-radius: 5px">'+b.grade+'</span>';
+                    }
+                }
+                , {
+                    field: 'likes',
+                    title: '点赞数',
+                    width: '15%',
+                    align: 'center'
+                }
+                , {
+                    field: 'views',
+                    title: '浏览量',
+                    width: '15%',
+                    align: 'center'
+                }
+                , {
+                    title: '活跃度',
+                    width: '15%',
+                    align: 'center',
+                    templet:function (b){
+                        return '<b style="color: #FF5C6A;font-size: 20px;">'+b.activity+'</b>';
+                    }
+                }
+            ] ]
+        });
+        var $ = layui.$, active = {
+            reload: function(){
+                //执行重载
+                table.reload('testReload', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    ,where: {
+                        consultantName: $("#xxm").val(),
+                    }
+                }, 'data');
+            }
+        };
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
+</body>
+</html>

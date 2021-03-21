@@ -1,0 +1,24 @@
+#pub_footer_id a{
+	transition: 0.5s;
+	color: rgb(102,102,102);
+}
+#pub_footer_id a:hover{
+	color: rgb(255,102,0);;
+	text-decoration: underline;
+}
+#pub_footer_id .space{
+	margin:0px 18px;
+	color: #ddd;
+	display: inline-block;
+}
+.pub_footer{
+	text-align: center;
+	font-size: 14px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#pub_footer_id p{
+	color: rgb(102,102,102);
+	line-height: 34px;
+	font-size: 14px;
+}

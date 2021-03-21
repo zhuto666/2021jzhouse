@@ -1,0 +1,68 @@
+#newHouseMain{width: 1200px;margin: 0px auto;}
+.currentPage{
+    color: #999999;
+    font-size: 10px !important;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0px;
+}
+
+#newHouseNav{
+    margin-top: 10px;
+    padding: 10px 5px 10px 10px;
+    border: 1px solid #D9D9D9;
+}
+#newHouseNav>div{margin: 5px 0px;}
+
+.newHouseNavSum{list-style: none;overflow: hidden;}
+.newHouseNavSum>li{float: left;padding: 3px 10px;color: #999999;font-size: 12px;}
+.newHouseNavSum>li:first-child{margin-right: 20px;}
+.newHouseNav_area,.newHouseNav_area2{}
+.newHouseNav_area2{display: none;margin-left: 75px;background-color: #F7F8FC;padding: 2px 0px;}
+
+.newHouseNav_d{cursor: pointer}
+.newHouseNav_d:hover{color: red;}
+.newHouseNav_red{color:red;}
+
+#newHouseNavZhu{overflow: hidden;margin-top: 20px;}
+.newHousesAll{width: 880px;float: left;border:1px solid #D9D9D9;}
+.newHouseMap{width: 310px;float: right;}
+.newHousesAll_d1{overflow: hidden;background-color: #FAFAFC;padding: 0px 20px;border-bottom:1px solid #CCCCCC;}
+.newHousesAll_d1>span{display: inline-block;height: 57px;line-height: 57px;color: #5C5C5C;}
+.newHousesAll_d1>span:first-child{float: left;color: red;cursor: pointer;font-size: 20px;}
+.newHousesAll_d1>span:last-child{float: right;cursor: pointer;}
+.newHousesAll_d2{overflow: hidden;padding-left: 20px;padding: 0px 20px;}
+.newHousesAll_d2>div{height: 57px;line-height: 57px;text-align: center;color: #999999;}
+.newHousesAll_d2>div:first-child{float: left;}
+.newHousesAll_d2>div:last-child{float: right;cursor: pointer;}
+.houseSort{display: inline-block;margin: 0px 3px;}
+.houseSort>.jt{display: inline-block}
+.newHousesAll_d3_li{padding: 20px 20px;border-top: 1px solid #D9D9D9;cursor: pointer;}
+.newHousesAll_d3_li:hover{background-color: #F7F8F8;}
+.newHousesAll_d3_li_d1_d1{float: left;}
+.newHousesAll_d3_li_d1_d2{float: left;margin-left: 15px;}
+.newHousesAll_d3_li_d1_d2_h1{width: 300px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.newHousesAll_d3_li_d1_d2>p{margin: 18px 0px;color: #666666;}
+.newHousesAll_d3_li_d1_d2>p:last-child span{display: inline-block;background-color: #F3F5F7;margin-right: 5px;padding: 3px 5px;}
+.newHousesAll_d3_li_img{width:210px;height:154px;}
+
+
+
+.newHousesAll_d3_li_d2{}
+.newHousesAll_d3_li_d2_d1,.newHousesAll_d3_li_d2_d2,.newHousesAll_d3_li_d2_d3,.newHousesAll_d3_li_d2_d4{padding: 5px 0px;}
+.newHousesAll_d3_li_d2_d1{color: #666666;}
+.newHousesAll_d3_li_d2_d1>span{color: red;font-size: 23px;font-weight: bold;}
+.newHousesAll_d3_li_d2_d3>img{border-radius: 50%;width: 40px;height: 40px;}
+.house_ZX{border: 1px solid #47B3E3;color: #47B3E3;padding: 5px 8px; }
+.newHousesAll_d3_li_d2_d2{color: #B1ACA9;}
+.newHousesAll_d3_li_d2_d4{font-weight: bold;font-size: 18px;}
+
+.newHousesAll_d3_li_d3:last-child:hover{color: red;}
+.text_center{text-align: center;}
+
+.newHouseMap_table{width: 260px; margin: 0px auto;text-align: center;}
+.newHouseMap_table tr{height: 40px;}
+.newHouseMap_table input{outline: none;border: 1px solid #D9D9D9;height: 30px;text-indent: 10px;}
+.newHouseMap_table_baom{width: 250px;background-color: #FF5B6A;font-size: 20px;font-weight: bold;color: #FFFFFF;border-radius: 3px;}
+.newHouseMap_table tr:last-child td{font-size: 19px;font-weight: bold;}
+

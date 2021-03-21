@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Language" content="zh-CN">
+	<meta property="og:type" content="website" />
+	<title>荆州房价_最新荆州房价统计走势图_荆州二手房价格_荆州好房子网</title>
+	<meta name="keywords" content="荆州房价,荆州房价网,荆州房价趋势,荆州二手房房价,荆州新房房价,荆州房价走势图,荆州房价统计图" />
+	<meta name="description" content="荆州好房子网运营团队为您提供荆州房价监测统计数据，包含荆州新房均价走势、荆州二手房挂牌均价走势、荆州历年房价走势等荆州房价涨跌信息,房价走势图、荆州房地产市场调研、分析预测,请关注荆州好房子网房价行情频道" />
+	<meta property="og:title" content="荆州房价_最新荆州房价统计走势图_荆州二手房价格_荆州好房子网" />
+	<meta property="og:description" content="荆州好房子网运营团队为您提供荆州房价监测统计数据，包含荆州新房均价走势、荆州二手房挂牌均价走势、荆州历年房价走势等荆州房价涨跌信息,房价走势图、荆州房地产市场调研、分析预测,请关注荆州好房子网房价行情频道" />
+	<meta property="og:site_name" content="荆州好房子网" />
+	<meta property="og:locale" content="province=湖北;city=荆州;coord=30.340843,112.245519" />
+	<link rel="shortcut icon" type="image/ico" href="https://www.jzhfz.com/favicon.ico">
+	<link rel="stylesheet" href="https://www.jzhfz.com/static/skin/tfy/css/tfy-reset.css?20210220" />
+	<link rel="stylesheet" href="https://www.jzhfz.com/static/skin/tfy/css/tfy-head.css?20200922" />
+	<link rel="stylesheet" href="https://www.jzhfz.com/static/skin/tfy/css/tfy-login.css?20190611" />
+	<link rel="stylesheet" href="https://www.jzhfz.com/static/skin/tfy/css/tfy-fangjia.css?v=3.0" />
+	<!-- jquery JS导入 -->
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="https://www.jzhfz.com/static/skin/tfy/js/echarts.min.js"></script>
+</head>
+<body>
+<header>
+
+	<!--悬浮登录框begin-->
+	<div class="login-container" id="login-container">
+		<div class="mask"></div>
+		<div class="login-box" id="login-box">
+			<div class="login-header">
+				<div class="top">
+					<span class="close" id="closeLogin">╳</span>
+				</div>
+				<h3>会员登录</h3>
+			</div>
+			<div class="login-body" id="login-default">
+				<div class="tabs">
+					<div class="tab-item active">帐号登录</div>
+					<div class="tab-item">扫码登录</div>
+				</div>
+				<div class="login-card" id="login-card">
+					<!-- 帐号登录 -->
+					<div class="login-form">
+						<div class="form-item m-bottom-30">
+							<label class="label">用户名：</label>
+							<input type="text" name="tel" placeholder="请输入用户名或手机号码">
+						</div>
+						<div class="form-item m-bottom-20">
+							<label class="label">密　码：</label>
+							<input type="password" name="userpwd" placeholder="请输入密码">
+						</div>
+						<div class="form-item m-bottom-20">
+							<label class="label"></label>
+							<input type="checkbox" id="ji">
+							<label class="checkbox-text" for="ji">下次自动登录</label>
+							<div class="c-right find-password"><a href="https://www.jzhfz.com/member/userlogin?find_pwd=1">忘记密码？</a></div>
+						</div>
+						<div class="form-item">
+							<button class="login-btn">立即登录</button>
+						</div>
+						<div class="to-reg">
+							<span class="c-right"><a href="https://www.jzhfz.com/member/reg">没有账号？立即注册</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="login-wechat hide" id="login-wechat">
+				<!-- <h4>微信登录</h4> -->
+				<p class="text-center">微信登录方便快捷，更省时省力！</p>
+				<div class="qrcode-box">
+					<div class="tip hide" id="pastDueTip">
+						<div>
+							<i class="el-icon-refresh"></i>
+							<p>二维码已过期请点此重新获取</p>
+						</div>
+					</div>
+					<img src="" id="wechatQrCode" style="width: 168px" alt="">
+				</div>
+				<div class="text-center">
+					<h4>扫描二维码登录</h4>
+					<p>请使用<span style="color:#67C23A">手机微信</span>扫码完成登录</p>
+				</div>
+			</div>
+			<div class="login-footer">
+				<div class="other-tip">第三方登录：</div>
+				<div class="pc-tip text-right hide">电脑登录：</div>
+				<div class="other-btn">
+					<div class="other-login wechat-btn" id="wechat-btn"></div>
+					<a href="https://www.jzhfz.com/member/qqLogin">
+						<div class="other-login qq-btn"></div>
+					</a>
+				</div>
+				<div class="pc-btn hide">
+					<img src="https://www.jzhfz.com/static/skin/tfy/img/pcLogin_icon.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--悬浮登录框end-->
+	<div class="down-tip">
+		<div class="tip-logo"><a href="index"><img src="https://images.jzhfz.com/attachment/config/20200619/4da3aa8a72600bf007b857fd56b73a7ebf4aa766.jpeg?x-oss-process=style/w_320"></a></div>
+		<div class="tip-nav">
+			<a rel="nofollow" href="#ysxkarea">预售面积</a>
+			<a rel="nofollow" href="#ysxknum">预售许可</a>
+			<a rel="nofollow" href="#zst_wqba">网签成交</a>
+			<a rel="nofollow" href="#zst">新房均价</a>
+			<a class="current" href="http://localhost:8080/jump/index">首页</a>
+		</div>
+	</div>
+</header>
+<div class="data">
+	<div class="main">
+		<h1 class="title">荆州 2021-03月房地产市场行情</h1>
+
+		<div class="data-price">
+			<div class="deal-price"> <span> <a href="https://www.jzhfz.com/loupan/" target="_blank">
+								<label class="dataAuto">7585</label>
+							</a> </span>
+				<p>新房均价(元/m²)</p>
+			</div>
+			<div class="deal-price"> <span> <a href="#wangqian">
+								<label class="dataAuto">1146</label>
+							</a> </span>
+				<p>2021-01月成交套数</p>
+			</div>
+			<div class="deal-price"> <span> <a href="https://www.jzhfz.com/info/" target="_blank">
+								<label class="dataAuto">6234</label>
+							</a> </span>
+				<p>二手房挂牌均价(元/m²)</p>
+			</div>
+			<div class="listing-price"> <span> <a href="https://www.jzhfz.com/info/list-2.html" target="_blank">
+								<label class="dataAuto">1023</label>
+							</a> </span>
+				<p>出租房均价(元/月)</p>
+			</div>
+		</div>
+		<ul>
+			<li> <a href="https://www.jzhfz.com/xiaoqu.html" target="_black">
+				<div class="bg"></div>
+				<span>
+								<label>755</label>
+							</span>
+				<p>监测小区数量</p>
+			</a> </li>
+			<li> <a href="https://www.jzhfz.com/info/" target="_black">
+				<div class="bg"></div>
+				<span>
+								<label>1142</label>
+							</span>
+				<p>二手房挂牌数量</p>
+			</a> </li>
+			<li class="last"> <a href="https://www.jzhfz.com/info/list-2.html" target="_black">
+				<div class="bg"></div>
+				<span>
+								<label>203</label>
+							</span>
+				<p>出租房挂牌数量</p>
+			</a> </li>
+		</ul>
+	</div>
+</div>
+<div class="tfdiv">
+	<a name="loupan"></a>
+	<div class="baiduclass"><b>荆州房价</b>,<b>荆州好房子网二手房房价</b>,
+		<b>荆州房价统计</b>,<b>荆州房价走势</b></div>
+
+	<div class="w">
+		<div class="villageImage house2">
+			<h2 class="house2Title">荆州在售新房数据统计</h2>
+			<ul>
+				<div id="zst" style="height:400px; width: 100%; margin:0px auto; padding: 20px 0 20px 0;"></div>
+			</ul>
+
+		</div>
+	</div>
+	<!-- 房价趋势 -->
+
+
+	<a name="shangpu"></a>
+	<!-- 商铺价格 -->
+
+
+	<!--  二手房出售 -->
+
+	<a name="2sf"></a>
+
+	<a name="niandu"></a>
+
+
+
+
+	<a name="wangqian"></a>
+	<div class="w">
+		<div class="villageImage house2">
+			<h2 class="house2Title">商品房网签</h2>
+			<ul>
+				<div id="zst_wqba" style="height:400px; width: 100%; margin:0px auto; padding: 20px 0 20px 0;"></div>
+			</ul>
+
+		</div>
+	</div>
+
+	<!-- 房价趋势 -->
+
+
+	<a name="ysxknum"></a>
+	<div class="w">
+		<div class="villageImage house2">
+			<h2 class="house2Title">商品房预售</h2>
+			<ul>
+				<div id="ysxknum" style="height:400px; width: 100%; margin:0px auto; padding: 20px 0 20px 0;"></div>
+			</ul>
+
+		</div>
+	</div>
+
+	<div class="w">
+		<div class="villageImage house2">
+			<h2 class="house2Title">预售面积</h2>
+			<ul>
+				<div id="ysxkarea" style="height:400px; width: 100%; margin:0px auto; padding: 20px 0 20px 0;"></div>
+			</ul>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		//ajax拿数据
+		$.ajax({
+			url:'/dataimg/cha',
+			type:'post',
+			dataType:'json',
+			success:function(data){
+				var option1 = {
+					title: {
+						left: 'center',
+						text: data.a2[0],
+						subtext: 'jzhfz.com'
+					},
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'cross',
+							label: {
+								backgroundColor: '#6a7985'
+							}
+						}
+					},
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+						data: data.a3
+					},
+					yAxis: [{
+						type: 'value',
+						min: "dataMin"
+					}],
+					series: [{
+						data:data.a1,
+						type: 'line',
+						smooth: true,
+						areaStyle: {}
+					}]
+				};
+				var option2 = {
+					title: {
+						left: 'center',
+						text: data.b2[0],
+						subtext: 'jzhfz.com'
+					},
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'cross',
+							label: {
+								backgroundColor: '#6a7985'
+							}
+						}
+					},
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+						data: data.b3
+					},
+					yAxis: [{
+						type: 'value',
+						min: "dataMin"
+					}],
+					series: [{
+						data:data.b1,
+						type: 'line',
+						smooth: true,
+						areaStyle: {}
+					}]
+				};
+				var option3 = {
+					title: {
+						left: 'center',
+						text: data.c2[0],
+						subtext: 'jzhfz.com'
+					},
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'cross',
+							label: {
+								backgroundColor: '#6a7985'
+							}
+						}
+					},
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+						data: data.c3
+					},
+					yAxis: [{
+						type: 'value',
+						min: "dataMin"
+					}],
+					series: [{
+						data:data.c1,
+						type: 'line',
+						smooth: true,
+						areaStyle: {}
+					}]
+				};
+				var option4 = {
+					title: {
+						left: 'center',
+						text: data.d2[0],
+						subtext: 'jzhfz.com'
+					},
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'cross',
+							label: {
+								backgroundColor: '#6a7985'
+							}
+						}
+					},
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+						data: data.d3
+					},
+					yAxis: [{
+						type: 'value',
+						min: "dataMin"
+					}],
+					series: [{
+						data:data.d1,
+						type: 'line',
+						smooth: true,
+						areaStyle: {}
+					}]
+				};
+				echarts.init(document.getElementById('zst')).setOption(option1);
+				echarts.init(document.getElementById('zst_wqba')).setOption(option2);
+				echarts.init(document.getElementById('ysxknum')).setOption(option3);
+				echarts.init(document.getElementById('ysxkarea')).setOption(option4);
+			}
+		})
+	</script>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div class="tfdiv">
+	<p style="line-height:40px; font-size:14px">
+		<font color="#ff0000">本页面数据基于荆州好房子网平台大数据，由系统每月自动生成，仅供参考！引用数据请注明来自荆州好房子网。未经授权，严禁篡改、商用，侵权必究！</font>
+	</p>
+</div>
+<div class="baiduclass"><b>荆州房价</b>,<b>荆州二手房房价</b>,<b>荆州房价统计</b>,<b>荆州房价走势</b></div>
+<span class="clearfix"></span>
+
+<div class="tfy-footer">
+	<p>
+		<a rel="nofollow" href="https://www.jzhfz.com/about/1.html">关于我们</a><span class="pice">|</span>
+		<a rel="nofollow" href="https://www.jzhfz.com/about/2.html">广告服务</a><span class="pice">|</span>
+		<a rel="nofollow" href="https://www.jzhfz.com/about/3.html">联系我们</a><span class="pice">|</span>
+		<a rel="nofollow" href="https://www.jzhfz.com/announce.html">网站公告</a><span class="pice">|</span>
+		<a rel="nofollow" href="https://www.jzhfz.com/faq.html">帮助中心</a>
+	</p>
+	<p>Copyright &copy; 荆州好房子网 Corporation, All Rights Reserved </p>
+	<p><a href="https://www.jzhfz.com">荆州好房子网</a>客服QQ：139-9761-8567（魏先生）&nbsp; &nbsp;微信客服：haofz6666 &nbsp;
+		&nbsp;投稿:276838808@qq.com&nbsp; &nbsp;客服热线：400-600-0716（工作时间：8:30-17:30）</p>
+
+	<p style="margin-bottom:20px">工信部备案/许可证编号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">鄂ICP备12012799号-1号
+	</a>&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" rel="nofollow"
+				 style="display:inline-block;text-decoration:none;"><img src="https://www.jzhfz.com/static/skin/tfy/img/ghs.png"
+																		 border="0" /></a>
+	</p>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?ffe572bea9212006bdec3505b46fb458";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<div style="position: absolute;left:-120%;bottom: 0;">
+		<style>
+			.sign-layer .layui-layer-title{
+				height: 0;
+				overflow: hidden;
+			}
+			.sign-box{
+				padding: 20px 20px;
+				box-sizing: border-box;
+			}
+			.sign-box .layer-header{
+				position: relative;
+				font-size: 16px;
+				padding-bottom: 10px;
+				color: #62ab00;
+				font-weight: bold;
+				border-bottom: 2px solid #62ab00
+			}
+			.sign-box .layer-header .close{
+				position: absolute;
+				line-height: 1;
+				display: inline-block;
+				padding: 10px;
+				right: 0;
+				top: -5px;
+				color: #999;
+				font-size: 20px;
+				cursor: pointer;
+				transition: color 0.2s;
+			}
+			.sign-box .layer-header .close:hover{
+				color: #f00
+			}
+			.sign-box .tip{
+				font-size: 17px;
+				margin: 20px 0;
+			}
+			.sign-box .tip>span{
+				color: #999
+			}
+			.sign-box .form-item{
+				padding: 5px;
+				margin-bottom: 20px;
+				margin-left: 50px;
+			}
+			.sign-box .form-item .label{
+				float: left;
+				width: 70px;
+				line-height: 30px;
+				font-size: 14px;
+			}
+			.sign-box .form-item input{
+				height: 30px;
+				padding: 5px;
+				box-sizing: border-box;
+				width: 260px;
+			}
+			.sign-box .button-box{
+				padding: 15px;
+			}
+			.sign-box .button-box>button{
+				width: 120px;
+				font-size: 17px;
+				border: 0;
+				border-radius: 3px;
+				line-height: 2;
+				margin-left: 150px;
+				color: #fff;
+				background-color: #62ab00;
+				cursor: pointer;
+			}
+			.sign-box .footer-tip{
+				margin-top: 10px;
+				color: #999;
+			}
+		</style>
+		<div id="home-sign-up" class="sign-box">
+			<div class="layer-header">
+				<h2>申请免费设计</h2>
+				<span class="close" onclick="homeSignUp.closeLayer()">×</span>
+			</div>
+			<div class="tip">我们将为您保密个人信息！<span>请填写您的手机号码：</span></div>
+			<div class="form-item">
+				<div class="label">手机号：</div>
+				<input type="text" placeholder="请输入您的手机号" id="sign_tel">
+			</div>
+			<div class="form-item">
+				<div class="label">联系人：</div>
+				<input type="text" placeholder="请输入您的姓名" id="sign_name">
+			</div>
+			<div class="button-box">
+				<button onclick="homeSignUp.subData()">立即申请</button>
+			</div>
+			<div class="footer-tip">您将获得3套设计方案参考</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="https://www.jzhfz.com/static/skin/tfy/js/jquery1.9.1.min.js?20190606"></script>
+<script type="text/javascript" src="https://www.jzhfz.com/static/skin/tfy/js/jquery.SuperSlide.js?20190606"></script>
+<script type="text/javascript" src="https://www.jzhfz.com/static/skin/tfy/layer/layer.js?20190606"></script>
+<script type="text/javascript" src="https://www.jzhfz.com/static/skin/tfy/js/style.js?20190606"></script>
+<script>
+	var handleLogin = function(){
+		$("#login-container").addClass('show')
+	}
+	// 切换账号和手机号登录
+	$('.tab-item').on('click',function(){
+		if($(this).index()==1){
+			switchWechat()
+		}else{
+			switchPc()
+		}
+	})
+	var switchPc = function(){
+		$("#login-default").removeClass('hide')
+		$("#login-wechat").addClass('hide')
+		$('#login-box .other-btn').removeClass('hide')
+		$('#login-box .pc-btn').addClass('hide')
+		$('#login-box .other-tip').removeClass('hide')
+		$('#login-box .pc-tip').addClass('hide')
+		wechatLogin.clearTimer()
+	}
+	var switchWechat = function(){
+		$("#login-default").addClass('hide')
+		$("#login-wechat").removeClass('hide')
+		$('#login-box .other-btn').addClass('hide')
+		$('#login-box .pc-btn').removeClass('hide')
+		$('#login-box .other-tip').addClass('hide')
+		$('#login-box .pc-tip').removeClass('hide')
+		wechatLogin.handleWechatLogin()
+	}
+	// 切换电脑登录
+	$('#login-box .pc-btn').on('click', function(){
+		switchPc()
+	})
+
+	// 切换微信登录
+	$('#wechat-btn').on('click', function(){
+		switchWechat()
+	})
+
+	// 重新获取微信二维码
+	$('#pastDueTip').on('click', function(){
+		wechatLogin.handleWechatLogin()
+	})
+
+	/**
+	 *微信扫码登录
+	 */
+	var wechatLogin = {
+		timer:null,
+		handleWechatLogin: function(){
+			$('#pastDueTip').addClass('hide')
+			var _this = this
+			$.ajax({
+				url: 'https://www.jzhfz.com/member/wxLogin',
+				success: function(res){
+					if(res.code){
+						$('#wechatQrCode').attr("src", res.qrcode)
+						_this.timer = setInterval(function(){
+							_this.watchWechatLogin(res.code)
+						},3000)
+					}
+				},
+				error: function(err){
+					// console.log(err)
+					// this.timer = setInterval(function(){
+					//     this.watchWechatLogin(1212)
+					//}.bind(this),3000)
+				}
+			})
+		},
+		watchWechatLogin: function(code){
+			var _this = this;
+			$.ajax({
+				url: 'https://www.jzhfz.com/member/checkLogin',
+				data:{
+					code:code
+				},
+				success: function(res){
+					if(res.code === 1){
+						layer.msg('登录成功');
+						localStorage.setItem('TOKEN','islogin');
+						setTimeout(function(){
+							location.reload()
+						},1500)
+						_this.clearTimer()
+					}else{
+						if(res.status === -2){
+							_this.clearTimer()
+							$('#pastDueTip').removeClass('hide')
+						}
+					}
+				},
+				error: function(err){
+					console.log(err)
+				}
+			})
+		},
+		clearTimer: function(){
+			if(this.timer){
+				clearInterval(this.timer)
+			}
+		}
+	}
+
+	// 电脑登录
+	$('.login-btn').on('click', function(){
+		var loginData = {
+			tel: $('input[name="tel"]').val(),
+			userpwd: $('input[name="userpwd"]').val()
+		}
+		$.ajax({
+			type: 'POST',
+			url: '/member/login',
+			data: loginData,
+			success: function(res){
+				if(res.code == 1){
+					layer.msg('登录成功');
+					localStorage.setItem('TOKEN','islogin');
+					setTimeout(function(){
+						location.reload()
+					},1500)
+				}else{
+					layer.msg(res.msg);
+				}
+				console.log(res)
+			},
+			error: function(err){
+				console.log(err)
+			}
+		})
+	})
+
+	// 关闭登录窗口
+	$('#closeLogin').on('click', function(){
+		$('#login-container').removeClass('show')
+	})
+
+	$('#loginBtn').on('click', function(){
+		showLogin()
+	})
+	var showLogin = function(){
+		$('#login-container').addClass('show')
+	}
+
+	$('#sign_tel').on('input',function(){
+		homeSignUp.inputTel($(this))
+	})
+	$('#sign_name').on('input',function(){
+		homeSignUp.inputName($(this))
+	})
+	/**
+	 *家装报名
+	 *@param type 1:申请设计 2:报价
+	 *@param tel 手机号
+	 *@param name 联系人
+	 *@param mid 店铺id
+	 *@param cid 案例id
+	 *@param mianji 面积
+	 */
+	var homeSignUp = {
+		params: {
+			type:1,
+			tel:"",
+			name:"",
+			mid:"",
+			cid:"",
+			mianji:""
+		},
+		showBox: function(type,mid,cid){
+			// this.params.tel=""
+			// this.params.name=""
+			this.params.type = type||'';
+			this.params.mid = mid||'';
+			this.params.cid = cid||'';
+			this.sigBox = layer.open({
+				type: 1,
+				closeBtn: 0,
+				title:"装修预约",
+				skin:"sign-layer",
+				area: ['500px', '370px'],
+				shadeClose: true,
+				content: $("#home-sign-up")
+			})
+		},
+		inputTel: function(e){
+			this.params.tel = $(e).val()
+		},
+		inputName: function(e){
+			this.params.name = $(e).val()
+		},
+		inputMianji: function(e){
+			this.params.mianji = $(e).val()
+		},
+		closeLayer: function(){
+			layer.close(this.sigBox)
+		},
+		subData: function(type){
+			var _this = this
+			if(this.params.tel==""){
+				layer.msg("请输入手机号")
+				return
+			}
+			var re= /^1[3-9][0-9]{9}$/;
+			if(!re.test(this.params.tel))
+			{
+				layer.msg("手机号格式不正确")
+				return false;
+			}
+			if(this.params.name==""){
+				layer.msg("请输入联系人")
+				return
+			}
+			if(type){
+				this.params.type = type
+			}
+			$.ajax({
+				url:"/memberShop/signUp",
+				data:this.params,
+				success:function(res){
+					if(res.code==1){
+						_this.closeLayer()
+						_this.sendMessage(_this.params.mid, _this.params.cid)
+					}
+					layer.msg(res.msg)
+				},
+				error:function(err){
+					console.log(err)
+					layer.msg("操作失败请重试！")
+				}
+			})
+		},
+		sendMessage:function(mid,cid){
+			$.ajax({
+				url:"/memberShop/sendAdminNotice.html",
+				type:"GET",
+				data:{
+					mid:mid,
+					cid:cid
+				},
+				succsee:function(res){
+
+				}
+			})
+		}
+	}
+	var ieVersion = function () {
+		var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+		var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+		var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+		var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+		if (isIE) {
+			var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+			reIE.test(userAgent);
+			var fIEVersion = parseFloat(RegExp["$1"]);
+			if (fIEVersion == 7) {
+				return 7;
+			} else if (fIEVersion == 8) {
+				return 8;
+			} else if (fIEVersion == 9) {
+				return 9;
+			} else if (fIEVersion == 10) {
+				return 10;
+			} else {
+				return 6;//IE版本<=7
+			}
+		} else if (isEdge) {
+			return 'edge';//edge
+		} else if (isIE11) {
+			return 11; //IE11
+		} else {
+			return -1;//不是ie浏览器
+		}
+	}
+</script>
+<div class="tfy-fixed">
+	<dl>
+		<dd><a rel="nofollow" href="https://www.jzhfz.com/pubinfo.html" target="_blank">
+			<div class="tfy-img"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon25.png" /></div>
+			<div class="tfy-tit">发布</div>
+		</a>
+		</dd>
+		<dd class="chat"><a rel="nofollow" href="/usercenter#/im" target="_blank">
+			<div class="tfy-img"><img src="https://www.jzhfz.com/static/skin/tfy/img/message.png" /></div>
+			<div class="tfy-tit">消息<span class="spot hide"></span></div>
+		</a>
+			<div class="chat_list">
+				<ul id="friend_list">
+
+				</ul>
+			</div>
+		</dd>
+		<dd class="im_adv"><a rel="nofollow" href="#">
+			<div class="tfy-img"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon26.png" /></div>
+			<div class="tfy-tit">客服 <span class="spot_green hide"></span></div>
+		</a>
+			<div class='kefu_info_con'>
+				<ul class="kefu_info">
+
+					<li>
+						<div class="site_info_box">
+							<p>
+								<span class="site_name">荆州好房子网</span>
+								<span class="site_info">官方客服热线</span>
+							</p>
+							<!-- <p>客服电话</p> -->
+							<p class="kefu_tel">400-600-0716</p>
+							<p><span>工作时间</span><span>8:30-17:30</span></p>
+						</div>
+					</li>
+
+
+				</ul>
+			</div>
+		</dd>
+		<dd><a rel="nofollow" href="#">
+			<div class="tfy-img"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon30.png" /></div>
+			<div class="tfy-tit">小程序</div>
+		</a>
+			<ul>
+				<li>
+					<div class="tfy-img">
+						<img src="https://images.jzhfz.com/attachment/config/20200527/be8ca852590b3a5d5a76148195efb6f73f0bcd60.jpeg?x-oss-process=style/w_150">
+
+					</div>
+					<p>微信扫一扫</p>
+					<p>使用小程序</p>
+				</li>
+			</ul>
+		</dd>
+		<dd><a rel="nofollow" href="#">
+			<div class="tfy-img"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon27.png" /></div>
+			<div class="tfy-tit">合作</div>
+		</a>
+			<ul>
+				<li>
+					<div class="tfy-img"><img src="https://images.jzhfz.com/attachment/config/20200526/d122985cc5dfeac60a00ec4245a21bf1caa6a773.jpeg?x-oss-process=style/w_150" /></div>
+					<p>微信客服号：haofz6666</p>
+					<p>添加我为好友</p>
+				</li>
+			</ul>
+		</dd>
+		<!-- <dd><a href="http://wpa.qq.com/msgrd?v=3&uin=139-9761-8567（魏先生）&site=qq&menu=yes" target="_blank">
+        <div class="tfy-img"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon28.png" /></div>
+        <div class="tfy-tit">反馈</div>
+        </a>
+    </dd> -->
+		<style>
+
+		</style>
+
+		<dd class="li"><a href="javascript:void(0)">
+			<div class="tfy-img"><img src="https://www.jzhfz.com/static/skin/tfy/img/icon29.png" /></div>
+			<div class="tfy-tit">顶部</div>
+		</a></dd>
+	</dl>
+</div>
+
+
+
+</body>
+</html>

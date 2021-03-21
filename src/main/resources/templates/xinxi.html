@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>二手房</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/floatmuen.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_head.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/pub_footer.css"/>
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/xinxi.css">
+</head>
+<body>
+<ul id="floatMul"></ul>
+<div id="head"></div>
+<div id="navigation"></div>
+
+<div id="dao_div">
+    <div id="tou">
+        <br />
+        <span class="xiangqing">您的位置：荆州好房子网 > 信息详情</span>
+        <br/><br/><br/>
+        <h1 class="dx"><b th:text="${h.title}"></b></h1>
+        <br/>
+        <span>更新时间：16小时前 &nbsp;&nbsp;&nbsp;&nbsp;20人已浏览</span>
+        <span class="hf"><span >虚假举报</span></span>
+        <br><br>
+        <div id="hc">
+            <div class="hc_div"></div>
+        </div>
+        <div id="uu">
+            <span class="layui-icon layui-icon-left lay_left"></span>
+            <span class="layui-icon layui-icon-right lay_right"></span>
+            <div class="uu_div"></div>
+        </div>
+    </div>
+
+    <div id="yi_div" style="overflow: hidden;">
+        <div id="you_div">
+            <div>
+                <span class="lv tony">南北通透</span>
+                <span class="cheng tony">精装</span>
+                <span class="lan tony">随时看房</span>
+                <span class="hui tony">有电梯</span>
+                <span class="layui-icon layui-icon-heart aixin">&nbsp;&nbsp;收藏</span>
+            </div>
+            <div id="you_div_">
+                <span class="div_ard" th:text="${h.price}"></span>
+                <span class="wnag">万</span>
+            </div>
+            <div id="dycc">
+                <p class="acd">7967元/m²</p><br>
+                <span class="chc">首付30万　月供3609元(按揭30年)</span>
+            </div>
+        </div>
+        <div id="er_div">
+
+            <ul>
+                <li class="assd">
+                    <h2 class="h3_d"><b><span th:text="${h.room}"></span>室<span th:text="${h.hall}"></span>厅<span th:text="${h.defend}"></span>卫</b></h2><br>
+                    <p>户型</p>
+                </li>
+                <li class="bssd">
+                    <h2 class="h3_d"><b><span th:text="${h.houseSize}"></span>m²</b></h2> <br>
+                    <p>面积<p>
+                </li>
+                <li class="cssd">
+                    <h2 class="h3_d"><b>小高层住宅</b></h2><br>
+                    <p>精装修</p>
+                </li>
+            </ul>
+        </div>
+        <div id="san_div">
+            <ul>
+                <li style="height:35px;padding-top: 20px;">
+                    <span style="padding-right: 40px;color: #999999;">小区名称</span>
+                    <span class="san_div_span_ys" th:text="${h.area.name}"></span>
+                </li>
+                <li style="height:35px;">
+                    <span style="padding-right: 40px;color: #999999;">小区房源</span>
+                    <span class="san_div_span_ys">售13套</span> <span>/</span> <span class="san_div_span_ys">租9套</span>
+                </li>
+                <li style="height:35px;">
+                    <span style="padding-right: 40px;color: #999999;">小区房价</span>
+                    <span>7734元/㎡ 较上个月持平 0.0%</span>
+                </li>
+            </ul>
+        </div>
+        <div id="si_div" style="margin-left: 30px;">
+            <span th:text="${h.user.linkman}"></span>
+            <p style="padding-top: 20px; font-size:20px;color:#FF5C6A;font-weight: bold;" th:text="${h.user.phone}"></p>
+        </div>
+    </div>
+    <div class="layui-row" >
+        <div id="xia_div_yi" class="layui-col-md8" style="margin-top: 60px;">
+            <div id="xia_div_er" >
+                <div id="xia_div_fff" >
+                    <p style="font-size: 20px;padding-top: 20px;padding-left: 20px;">概况</p>
+                </div>
+            </div>
+
+            <div  style="height: 150px;padding-top:20px;border-bottom: 1px solid #E4E4E4;">
+                <span  style="float: left;color:#999999">房源描述</span>
+                <div  style="float: left;padding-left: 50px;">
+                    <ul style="">
+                        <li>
+                            <span>房屋总价：</span>
+                            <span><span th:text="${h.price}"></span>万</span>
+                        </li><br>
+                        <li>
+                            <span>房屋户型：</span>
+                            <span><span th:text="${h.room}"></span>室<span th:text="${h.hall}"></span>厅<span th:text="${h.defend}"></span>卫</span>
+                        </li><br>
+                        <li>
+                            <span>房屋类型：</span>
+                            <span>小高层住宅</span>
+                        </li><br>
+                        <li>
+                            <span>房屋朝向：</span>
+                            <span th:text="${h.orientation}"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="" style="float: right;padding-right: 150px;">
+                    <ul style="">
+                        <li>
+                            <span>所在楼层：</span>
+                            <span>低层/共18层</span>
+                        </li><br>
+                        <li>
+                            <span>房屋面积：</span>
+                            <span>123</span>
+                        </li><br>
+                        <li>
+                            <span>装修情况：</span>
+                            <span>精装修</span>
+                        </li><br>
+                        <li>
+                            <span>所在小区：</span>
+                            <span th:text="${h.area.name}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div  style="height: 60px;border-bottom: 1px solid #E4E4E4;padding-top:20px;">
+                <ul>
+                    <li>
+                        <span style="color:#999999">核心卖点</span>
+                        <div style="float: right;width: 500px;padding-right: 150px;">
+								 <span>地段好，有小区物业管理。证件齐全，屋内精装修，带部分家具家电，大三房两厅两卫的户型，
+								 南北通透，欲购从速啊！！</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div  style="height: 60px;padding-top:20px;">
+                <span style="color:#999999">屋内设备</span>
+                <span style="padding-left: 40px;" th:text="${h.roomFacilities}">水,电,天然气</span>
+            </div>
+        </div>
+        <div  id="ccssd"  class="layui-col-md3">
+            <p style="font-size: 20px;">手机扫码看房源</p><br>
+            <p>微信扫一扫</p>
+            <img src="../images/xinxi/179fdbd9d8f2a0df2dd67d000179846ce44ea0ff.jpg"/>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+<script type="text/javascript" th:inline="javascript">
+    var imgArr = /*[[${h.indoorImg.split(',')}]]*/ [];
+    $(function(){
+        $("#floatMul").load("../publichtml/floatMune.html");
+        $("#head").load("../publichtml/public_pageHead.html");
+        $("#footer").load("../publichtml/pub_footer.html");
+        $("#navigation").load("../publichtml/navigation.html",function(){
+            $("#nologo>li").removeClass("active").eq(/*[[${type}]]*/ 2).addClass("active");
+        });
+
+        for(var i=0;i<imgArr.length;i++){
+            $(".hc_div").append("<img class='img' src='../images/houseimg/"+imgArr[i]+"' />");
+        };
+        for(var i=0;i<imgArr.length;i++){
+            $(".uu_div").append("<img class='tpdj' onclick='djimg(this)' src='../images/houseimg/"+imgArr[i]+"' />");
+        };
+        $(".tpdj").eq(0).addClass("borRed");
+
+    });
+
+    var index = 0;
+    function djimg(t){
+        index = $(t).index();
+        $(".tpdj").removeClass("borRed").eq(index).addClass("borRed");
+        $(".hc_div").stop(false,true);
+        $(".hc_div").animate({"margin-left":(index*-600)+"px"},800);
+        if(index>=2){
+            $(".uu_div").stop(false,true);
+            $(".uu_div").animate({"margin-left":((index-2)*-140)+"px"},800);
+        }
+        if(index<2){
+            $(".uu_div").stop(false,true);
+            $(".uu_div").animate({"margin-left":"30px"},800);
+        }
+    };
+    var imglength = imgArr.length;
+    $("#uu .lay_right").click(function(){
+        $(".hc_div").stop(false,true);
+        index++;
+        if(index==imglength){
+            index=0;
+            $(".uu_div").animate({"margin-left":"30px"},800);
+        }
+        if(index>2){
+            $(".uu_div").stop(false,true);
+            $(".uu_div").animate({"margin-left":((index-2)*-125)+"px"},800);
+        }
+        $(".tpdj").removeClass("borRed").eq(index).addClass("borRed");
+        $(".hc_div").animate({"margin-left":(index*-600)+"px"},800);
+    });
+
+    $("#uu .lay_left").click(function(){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      				$(".hc_div").stop(false,true);
+        index--;
+        if(index==-1){index=imglength-1;}
+        if(index>=2){
+            $(".uu_div").stop(false,true);
+            if(index==2){
+                $(".uu_div").animate({"margin-left":"30px"},800);
+            }else{
+                $(".uu_div").animate({"margin-left":((index-2)*-140)+"px"},800);
+            }
+        }
+        $(".tpdj").removeClass("borRed").eq(index).addClass("borRed");
+        $(".hc_div").animate({"margin-left":(index*-600)+"px"},800);
+    });
+</script>
+
+<script type="text/javascript">
+    $(".aixin").click(function(){
+        if($(".aixin").hasClass("layui-icon-heart")){
+            $(".aixin").removeClass("layui-icon-heart").addClass("layui-icon-heart-fill");
+        }else{
+            $(".aixin").removeClass("layui-icon-heart-fill").addClass("layui-icon-heart");
+        }
+    });
+</script>
+</body>
+</html>

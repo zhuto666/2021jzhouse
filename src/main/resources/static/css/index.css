@@ -1,0 +1,392 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+body {
+	font-size: 16px;
+	color: #666;
+}
+
+/*四个长条广告*/
+
+.index-tou-guanggao {
+	overflow: hidden;
+	height: auto;
+	text-align: center;
+}
+
+.index-tou-guanggao img {
+	margin: 3px 0px;
+}
+
+
+
+/* 楼盘的简单筛选 */
+
+#saixuanbao {
+	width: 100%;
+	background-color: #f5f5f6;
+	padding: 15px 0px;
+}
+
+#saixuan {
+	width: 1200px;
+	margin: 0px auto;
+
+}
+
+#saixuan>ul {
+	width: 1120px;
+	display: inline-block;
+}
+
+#saixuan li {}
+
+
+.saixuanshang {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-bottom: 10px;
+}
+
+
+.saixuanshang img {
+	margin-right: 5px;
+	width: 22px;
+	height: 22px;
+	object-fit: cover;
+}
+
+.saixuanxia li {
+	padding: 2px 5px;
+	margin: 0 5px 5px 0px;
+	font-size: 13px;
+	color: #666;
+	display: inline-block;
+}
+
+
+
+#saixuanxia-hou {
+	width: 70px;
+	align-self: center;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	top: -50px;
+}
+
+
+
+
+
+
+
+/* 顶部头条代码 */
+.tfy-floor1{
+	background: #ffffff;
+	overflow: hidden;
+	margin-bottom: 15px;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.fl {
+	float: left !important;
+}
+
+.tfy-floor1 .tfy-l .mt {
+	overflow: hidden;
+	width: 675px;
+}
+
+
+.tfy-floor1 .tfy-l .mt .tfy-img {
+	width: 78px;
+	height: 71px;
+	margin-top: 20px;
+	margin-bottom: 12px;
+}
+
+.tfy-floor1 .tfy-l .mt .tfy-tit {
+	width: 557px;
+	padding: 0 20px;
+	overflow: hidden;
+	margin-top: 25px;
+	height: 60px;
+	background: #f5f5f6;
+	line-height: 60px;
+}
+
+.tfy-floor1 .tfy-l .mt .tfy-tit h3 {
+	font-weight: bold;
+	font-size: 28px;
+	color: #333333;
+	overflow: hidden;
+}
+
+
+.tfy-floor1 .tfy-l .slide3 {
+	position: relative;
+	width: 675px;
+	height: 320px;
+}
+
+
+/* 右边 */
+
+.tfy-img {
+	width: 82px;
+	height: 26px;
+	margin-top: 21px;
+	line-height: 24px;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	background: url(../images/index/img7.png) left no-repeat;
+
+}
+
+.tfy-floor1 .tfy-r {
+	width: 505px;
+	float: right;
+}
+
+
+.tfy-floor1 .tfy-r {
+	width: 505px;
+}
+
+.tfy-floor1 .tfy-r .mt {
+	overflow: hidden;
+	border-bottom: 1px solid #e6e6e6;
+	padding-bottom: 12px;
+}
+
+.tfy-floor1 .tfy-r.mt .tfy-img {
+	width: 82px;
+	height: 26px;
+	margin-top: 21px;
+	line-height: 24px;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	background: url(../images/index/img7.png) left no-repeat;
+}
+
+.tfy-floor1 .tfy-r .tfy-overhidden {
+	overflow: hidden;
+	max-width: 415px;
+	height: 45px;
+}
+
+
+.tfy-floor1 .tfy-r .mt .tfy-btn li {
+	float: left;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+
+.tfy-floor1 .tfy-r .mt .tfy-btn li a {
+	display: inline-block;
+	padding: 0 14px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 15px;
+	background: #f5f5f6;
+	font-size: 14px;
+	color: #333333;
+}
+
+.tfy-floor1 .tfy-r .mc {
+	padding-bottom: 12px;
+}
+
+.tfy-floor1 .tfy-r .mc h2.lineheight40 {
+	line-height: 40px;
+	padding: 5px 5px 0px;
+}
+
+.tfy-floor1 .tfy-r .mc h2 a {
+	color: #ff3b4b;
+}
+
+tfy-floor1 .tfy-r .mc h2.lineheight40 {
+	line-height: 40px;
+	padding: 5px 5px 0px;
+}
+
+.tfy-floor1 .tfy-r .mc p.show2lines {
+	padding: 0px 13px 0px 6px;
+	line-height: 28px;
+	height: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+a {
+	text-decoration: none;
+	color: #5c5c5c;
+}
+
+.tfy-floor1 .tfy-r .mcc {
+	overflow: hidden;
+	height: 32px;
+	background: #f5f5f6;
+	border-radius: 4px;
+	padding: 0 10px;
+	margin-bottom: 10px;
+}
+
+
+.tfy-floor1 .tfy-r .mcc img {
+	float: left;
+	margin-right: 7px;
+	margin-top: 10px;
+}
+
+.tfy-floor1 .tfy-r .mcc .slide1 {
+	width: 405px;
+	float: left;
+}
+
+.tfy-floor1 .tfy-r .mb dl {
+	line-height: 30px;
+	font-size: 16px;
+	color: #333333;
+}
+
+.tfy-floor1 .tfy-r .mb dd {
+	padding-left: 14px;
+	position: relative;
+}
+
+.tfy-floor1 .tfy-r .mb dd:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 16px;
+	width: 4px;
+	height: 4px;
+	background: #d9d9d9;
+	border-radius: 50%;
+}
+
+#toutiao-h3 {
+	text-decoration: none;
+}
+
+#toutiao-h3:hover {
+	color: red;
+}
+
+.nowrap a:hover {
+	color: red;
+}
+
+
+
+
+
+/* 顶部头条代码的样式 */
+.tfy-floor3 {
+	margin-top: 20px;
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.tfy-floor3 .mc .tfy-l {
+    width: 300px;
+}
+
+.fl {
+    float: left !important;
+}
+
+.lpsy_title {
+    margin-bottom: 11px;
+}
+
+.tfy-floor3 .mt h3 {
+    font-size: 36px;
+    color: #333333;
+    font-weight: bold;
+}
+
+
+.tfy-floor3 a {
+    text-decoration: none;
+}
+
+.tfy-floor3 .mc .tfy-l .tfy-t {
+    background: #f5f5f6;
+    border-radius: 3px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.tfy-floor3 .mc .tfy-l h2 {
+    line-height: 42px;
+    font-size: 18px;
+    color: #333333;
+    font-weight: bold;
+    padding: 0 15px;
+    position: relative;
+}
+
+.tfy-floor3 .mc .tfy-l ul {
+    text-align: center;
+}
+
+
+.tfy-floor3 .mc .tfy-l li {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.tfy-floor3 .mc .tfy-l li a {
+    display: block;
+    height: 90px;
+}
+
+.tfy-floor3 .mc .tfy-l li img {
+    margin-top: 20px;
+}
+
+
+.tfy-floor3 .mc .tfy-l li p {
+    margin-top: 10px;
+}
+ 
+.tfy-floor3 .mc .tfy-l h2:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 3px;
+    height: 14px;
+    background: #ff5c00;
+}
+
+
+
+
+
+
+
+

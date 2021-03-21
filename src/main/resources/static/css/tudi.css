@@ -1,0 +1,124 @@
+*{margin: 0px;padding: 0px;}
+#biaoti{
+    background-color: #FF5C6A;
+    height: 420px;
+
+}
+#chaxun{
+    margin: 0 auto;
+    width: 1200px;
+}
+.cu{
+    padding-top: 60px;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+}
+.sp{
+    color: #fff;
+    font-size: 23px;
+    text-align: center;
+
+}
+.xiala{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: 0px;
+    border: 0px;
+}
+
+#cin{
+    margin-left: 140px;
+    padding-left: 10px;
+}
+.sousuo{
+    height: 40px;width: 70px;border: 0px;
+    border-radius: 3px;
+    background-color: #FF0EC0;
+    margin-left: 10px;
+    color: #FFFFFF;
+    outline: 0px;
+    font-size: 20px;
+
+}
+
+#xm{
+    margin-left: 12px;
+    padding-left: 10px;
+}
+.sousuo2{
+    height: 40px;width: 70px;border: 0px;
+    border-radius: 3px;
+    background-color: #FD850A;
+    margin-left: 10px;
+    color: #FFFFFF;
+    outline: 0px;
+    font-size: 20px;
+
+}
+
+#kfs{
+    margin-left: 12px;
+    padding-left:10px;
+}
+.sousuo3{
+    height: 40px;width: 70px;border: 0px;
+    border-radius: 3px;
+    background-color: #12CE9A;
+    margin-left: 10px;
+    color: #FFFFFF;
+    outline: 0px;
+    font-size: 20px;
+
+}
+.wb{
+    text-align: center;
+    color: #fff;
+}
+#asc{
+    margin: 0px auto;
+    background-color: #F3F3F3;
+    width: 1400px;height: 80px;
+    margin-top: 30px;
+    border: 1px solid #E8E8E8;
+}
+.yus{
+    padding: 25px;
+    font-weight: bold;
+    color: #5C5C5C;
+    float: left;
+}
+.yys{
+    padding: 30px;
+    font-weight: bold;
+    color: #5C5C5C;
+    float: right;
+}
+#youqing{
+    margin: 0px auto;
+    margin-top: 50px;
+    width: 1400px;height: 150px;
+    border: 1px solid #E8E8E8;
+}
+.yq{
+    color:#FF5C6A;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+    padding-left: 30px;
+    border-bottom: 1px solid #E8E8E8;
+    background-color: #FAFAFA;
+}
+.cyu{
+    padding-top: 20px;
+    padding-left: 30px;
+    color: #5C5C5C;
+}
+
+.layui-table th{
+    font-weight: bold;
+}
+
+
