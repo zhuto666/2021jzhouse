@@ -10,6 +10,7 @@ public class JzhouseApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(JzhouseApplication.class, args);
+        System.out.println();
     }
 
 }
